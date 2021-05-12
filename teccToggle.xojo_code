@@ -74,7 +74,7 @@ Inherits WebSDKUIControl
 		  source.Append("document.getElementById('"+Self.ControlID+"').innerHTML += aggiungi;")
 		  
 		  'Session.ExecuteJavaScript(Join(source,""))
-		  
+		  self.Style.value("outline") = "none"
 		  
 		End Sub
 	#tag EndEvent

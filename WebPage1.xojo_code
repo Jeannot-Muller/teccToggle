@@ -32,7 +32,7 @@ Begin WebPage WebPage1
    Begin teccToggle VisualControl1
       ControlID       =   ""
       Enabled         =   True
-      Height          =   54
+      Height          =   27
       Index           =   -2147483648
       Indicator       =   0
       Left            =   0
@@ -48,16 +48,16 @@ Begin WebPage WebPage1
       Tooltip         =   ""
       Top             =   0
       Visible         =   True
-      Width           =   96
+      Width           =   64
       _mPanelIndex    =   -1
    End
    Begin teccToggle VisualControl2
       ControlID       =   ""
       Enabled         =   True
-      Height          =   46
+      Height          =   27
       Index           =   -2147483648
       Indicator       =   0
-      Left            =   104
+      Left            =   250
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -68,9 +68,9 @@ Begin WebPage WebPage1
       Scope           =   0
       TabIndex        =   2
       Tooltip         =   ""
-      Top             =   0
+      Top             =   86
       Visible         =   True
-      Width           =   140
+      Width           =   64
       _mPanelIndex    =   -1
    End
    Begin WebCheckbox Checkbox1
@@ -91,12 +91,67 @@ Begin WebPage WebPage1
       LockVertical    =   False
       Scope           =   2
       TabIndex        =   3
-      TabStop         =   True
       Tooltip         =   ""
       Top             =   121
       Value           =   False
       Visible         =   True
       Width           =   100
+      _mPanelIndex    =   -1
+   End
+   Begin WebButton Button1
+      AllowAutoDisable=   False
+      Cancel          =   False
+      Caption         =   "Button"
+      ControlID       =   ""
+      Default         =   False
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   0
+      Left            =   250
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Scope           =   2
+      TabIndex        =   4
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   135
+      Visible         =   True
+      Width           =   100
+      _mPanelIndex    =   -1
+   End
+   Begin WebPopupMenu PopupMenu1
+      ControlID       =   ""
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   ""
+      InitialValue    =   ""
+      LastAddedRowIndex=   0
+      LastRowIndex    =   0
+      Left            =   282
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      RowCount        =   0
+      Scope           =   2
+      SelectedRowIndex=   0
+      SelectedRowValue=   ""
+      TabIndex        =   5
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   237
+      Visible         =   True
+      Width           =   150
       _mPanelIndex    =   -1
    End
 End
@@ -116,8 +171,8 @@ End
 #tag Events VisualControl2
 	#tag Event
 		Sub onItemClick()
-		  messageBox("You clicked me too")
-		  break
+		  'messageBox("You clicked me too")
+		  'break
 		End Sub
 	#tag EndEvent
 #tag EndEvents
