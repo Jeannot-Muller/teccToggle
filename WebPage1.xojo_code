@@ -53,7 +53,7 @@ Begin WebPage WebPage1
    End
    Begin teccToggle VisualControl2
       ControlID       =   ""
-      Enabled         =   False
+      Enabled         =   True
       Height          =   46
       Index           =   -2147483648
       Indicator       =   0
@@ -65,10 +65,8 @@ Begin WebPage WebPage1
       LockRight       =   False
       LockTop         =   True
       LockVertical    =   False
-      PanelIndex      =   0
       Scope           =   0
       TabIndex        =   2
-      TabStop         =   True
       Tooltip         =   ""
       Top             =   20
       Visible         =   True
@@ -81,6 +79,20 @@ End
 #tag WindowCode
 #tag EndWindowCode
 
+#tag Events VisualControl1
+	#tag Event
+		Sub onItemClick()
+		  MessageBox("you clicked me")
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events VisualControl2
+	#tag Event
+		Sub onItemClick()
+		  messageBox("You clicked me too")
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag ViewBehavior
 	#tag ViewProperty
 		Name="_mPanelIndex"

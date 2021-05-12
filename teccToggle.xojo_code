@@ -15,6 +15,32 @@ Inherits WebSDKUIControl
 	#tag Event
 		Function ExecuteEvent(name as string, parameters as JSONItem) As Boolean
 		  // Events sent with TriggerServerEvent using your controlID will end up here
+		  Try
+		    Select Case Name
+		    Case "onItemClick"
+		      
+		      Try
+		        If Parameters.HasName("ID") Then
+		          
+		          If Me.Enabled Then
+		            onItemClick()
+		          End If 
+		          
+		        End If
+		      Catch err As OutOfBoundsException
+		        
+		      End Try
+		      
+		      
+		      
+		    End Select
+		    
+		    
+		    
+		    
+		  Catch
+		    
+		  End Try
 		End Function
 	#tag EndEvent
 
@@ -105,6 +131,11 @@ Inherits WebSDKUIControl
 	#tag EndEvent
 
 
+	#tag Hook, Flags = &h0
+		Event onItemClick()
+	#tag EndHook
+
+
 	#tag Property, Flags = &h21
 		Private Shared JSFramework As WebFile
 	#tag EndProperty
@@ -114,7 +145,7 @@ Inherits WebSDKUIControl
 	#tag EndProperty
 
 
-	#tag Constant, Name = kJSCode, Type = String, Dynamic = False, Default = \"var tecc;\n(function (tecc) {\n    class teccToggle extends XojoWeb.XojoVisualControl {\n        constructor(id\x2C events) {\n            super(id\x2C events);\n        }\n        render() {\n            super.render();\n            let el \x3D this.DOMElement();\n            if (!el)\n                return;\n            this.setAttributes();\n            var idstr \x3D el.id + \"_teccToggle\"        \n            let btn \x3D document.createElement(\"button\");\n            btn.style.cssText \x3D \"width:100%;height:100%;background:#FF0000;padding:2px; color:#FFFFFF; text-transform: none;cursor:pointer;\"\n\t     btn.innerHTML \x3D \"Jeannot\";\n             btn.id \x3D idstr;\n\n             this.replaceEveryChild( btn );\n            this.applyUserStyle();\n        }\n        updateControl(data) {\n            super.updateControl(data);\n            this.refresh();\n        }\n    }\n    tecc.teccToggle\x3D teccToggle;\n})(tecc || (tecc \x3D {}));", Scope = Private
+	#tag Constant, Name = kJSCode, Type = String, Dynamic = False, Default = \"var tecc;\n(function (tecc) {\n    class teccToggle extends XojoWeb.XojoVisualControl {\n        constructor(id\x2C events) {\n            super(id\x2C events);\n        }\n        render() {\n            super.render();\n            let el \x3D this.DOMElement();\n            if (!el)\n                return;\n            this.setAttributes();\n            var idstr \x3D el.id + \"_teccToggle\"        \n            let btn \x3D document.createElement(\"button\");\n            btn.style.cssText \x3D \"width:100%;height:100%;background:#FF0000;padding:2px; color:#FFFFFF; text-transform: none;cursor:pointer;\"\n\t     btn.innerHTML \x3D \"Jeannot\";\n             btn.id \x3D idstr;\n             btn.addEventListener(\"click\"\x2C function(event) {var ID \x3D $(this).attr(\'id\');var jsonObj \x3D new XojoWeb.JSONItem(); jsonObj.set(\'ID\'\x2CID);XojoWeb.session.comm.triggerServerEvent( el.id\x2C \'onItemClick\'\x2C jsonObj\x2C true);});\n\n             this.replaceEveryChild( btn );\n            this.applyUserStyle();\n        }\n        updateControl(data) {\n            super.updateControl(data);\n            this.refresh();\n        }\n    }\n    tecc.teccToggle\x3D teccToggle;\n})(tecc || (tecc \x3D {}));", Scope = Private
 	#tag EndConstant
 
 
