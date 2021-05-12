@@ -32,10 +32,10 @@ Begin WebPage WebPage1
    Begin teccToggle VisualControl1
       ControlID       =   ""
       Enabled         =   True
-      Height          =   104
+      Height          =   54
       Index           =   -2147483648
       Indicator       =   0
-      Left            =   20
+      Left            =   0
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -46,9 +46,9 @@ Begin WebPage WebPage1
       Scope           =   0
       TabIndex        =   1
       Tooltip         =   ""
-      Top             =   20
+      Top             =   0
       Visible         =   True
-      Width           =   140
+      Width           =   96
       _mPanelIndex    =   -1
    End
    Begin teccToggle VisualControl2
@@ -57,7 +57,7 @@ Begin WebPage WebPage1
       Height          =   46
       Index           =   -2147483648
       Indicator       =   0
-      Left            =   193
+      Left            =   104
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -68,9 +68,35 @@ Begin WebPage WebPage1
       Scope           =   0
       TabIndex        =   2
       Tooltip         =   ""
-      Top             =   20
+      Top             =   0
       Visible         =   True
       Width           =   140
+      _mPanelIndex    =   -1
+   End
+   Begin WebCheckbox Checkbox1
+      Caption         =   "Untitled"
+      ControlID       =   ""
+      Enabled         =   True
+      Height          =   34
+      Indeterminate   =   False
+      Index           =   -2147483648
+      Indicator       =   ""
+      Left            =   16
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Scope           =   2
+      TabIndex        =   3
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   121
+      Value           =   False
+      Visible         =   True
+      Width           =   100
       _mPanelIndex    =   -1
    End
 End
@@ -82,7 +108,8 @@ End
 #tag Events VisualControl1
 	#tag Event
 		Sub onItemClick()
-		  MessageBox("you clicked me")
+		  'MessageBox("you clicked me")
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -90,6 +117,7 @@ End
 	#tag Event
 		Sub onItemClick()
 		  messageBox("You clicked me too")
+		  break
 		End Sub
 	#tag EndEvent
 #tag EndEvents
