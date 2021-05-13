@@ -21,7 +21,7 @@ Inherits WebSDKUIControl
 		  Try
 		    
 		    Select Case Name
-		    Case "onItemClick"
+		    Case "teccToggleClick"
 		      
 		      Try
 		        If parameters.value("target") = "INPUT" Then
@@ -31,7 +31,7 @@ Inherits WebSDKUIControl
 		            If Me.Enabled Then
 		              objectid = Parameters.value("ID")
 		              'value = test2
-		              onItemClick()
+		              teccToggleClick()
 		              
 		              Return True
 		            End If 
@@ -82,6 +82,8 @@ Inherits WebSDKUIControl
 	#tag Event
 		Sub Serialize(js as JSONItem)
 		  // Use this method to serialize the data your control needs for initial setup
+		  js.value("off") = initialOff
+		  js.value("coloron") = "#" + ColorON.ToString.right(6)
 		  
 		  
 		End Sub
@@ -135,7 +137,7 @@ Inherits WebSDKUIControl
 		  css.Add("}")
 		  
 		  css.Add("Input:checked + .roundbutton {")
-		  css.Add("background-Color: #FF6E48;")
+		  css.Add("background-Color: #929292 !important;")
 		  css.Add("}")
 		  
 		  css.Add("Input:checked + .roundbutton:before  {")
@@ -185,9 +187,17 @@ Inherits WebSDKUIControl
 
 
 	#tag Hook, Flags = &h0
-		Event onItemClick()
+		Event teccToggleClick()
 	#tag EndHook
 
+
+	#tag Property, Flags = &h0, Description = 436F6C6F72204F4E
+		ColorON As color = &c3D90F8
+	#tag EndProperty
+
+	#tag Property, Flags = &h0, Description = 496E697469616C204F4646
+		InitialOff As boolean
+	#tag EndProperty
 
 	#tag Property, Flags = &h21
 		Private Shared JSFramework As WebFile
@@ -206,17 +216,33 @@ Inherits WebSDKUIControl
 	#tag EndProperty
 
 
-	#tag Constant, Name = kJSCode, Type = String, Dynamic = False, Default = \"var tecc;\n(function (tecc) {\n    class teccToggle extends XojoWeb.XojoVisualControl {\n        constructor(id\x2C events) {\n            super(id\x2C events);\n        }\n        render() {\n            super.render();\n            let el \x3D this.DOMElement();\n            if (!el)\n                return;\n            this.setAttributes();\n            var idstr \x3D el.id + \"_teccToggle\"        \n            let btn \x3D document.createElement(\"div\");\n            //btn.style.cssText \x3D \"text-transform: none;cursor:pointer;\"\n            var disabledStr \x3D \"\"\n             if (!this.enabled) { disabledStr \x3D \"disabled\x3D\'disabled\'\"}\n\t     btn.innerHTML \x3D \"<label class\x3D\'toggle\'><input id\x3D\'toggleswitch\' class\x3D\'teccCB\' type\x3D\'checkbox\' \" + disabledStr + \"><span class\x3D\'roundbutton\'></span></label>\";\n             btn.id \x3D idstr;\nvar controlObject \x3D XojoWeb.getNamedControl( el.id );\nvar jsonObj \x3D new XojoWeb.JSONItem(); \n\n\n\n             btn.addEventListener(\"click\"\x2C function(event) { var jsonObj \x3D new XojoWeb.JSONItem();  jsonObj.set(\'ID\'\x2Cel.id); jsonObj.set(\'target\'\x2Cevent.target.tagName); controlObject.triggerServerEvent(\'onItemClick\'\x2C jsonObj)\x2C true });\n             this.replaceEveryChild( btn );\n            this.applyUserStyle();\n        }\n        updateControl(data) {\n            super.updateControl(data);\n            this.refresh();\n        }\n    }\n    tecc.teccToggle\x3D teccToggle;\n})(tecc || (tecc \x3D {}));", Scope = Private
+	#tag Constant, Name = kJSCode, Type = String, Dynamic = False, Default = \"var tecc;\n(function (tecc) {\n    class teccToggle extends XojoWeb.XojoVisualControl {\n        constructor(id\x2C events) {\n            super(id\x2C events);\n        }\n        render() {\n            super.render();\n            let el \x3D this.DOMElement();\n            if (!el)\n                return;\n            this.setAttributes();\n            var idstr \x3D el.id + \"_teccToggle\"        \n            let btn \x3D document.createElement(\"div\");\n            //btn.style.cssText \x3D \"text-transform: none;cursor:pointer;\"\n            var disabledStr \x3D \"\"\n             if (!this.enabled) { disabledStr \x3D \"disabled\x3D\'disabled\'\"}\n            var iOff \x3D \"\"\n             if (this.off\x3D\x3Dtrue) { iOff\x3D \"checked\x3D\'checked\'\"}\n\n\t     btn.innerHTML \x3D \"<label class\x3D\'toggle\'><input id\x3D\'toggleswitch\' class\x3D\'teccCB\' \" + iOff + \" type\x3D\'checkbox\' \" + disabledStr + \"><span class\x3D\'roundbutton\' style\x3D\'background-color:\" + this.coloron +  \"\'></span></label>\";\n             btn.id \x3D idstr;\nvar controlObject \x3D XojoWeb.getNamedControl( el.id );\nvar jsonObj \x3D new XojoWeb.JSONItem(); \n\n\n\n             btn.addEventListener(\"click\"\x2C function(event) { \n \t\t\tvar jsonObj \x3D new XojoWeb.JSONItem();  \n\t\t\tjsonObj.set(\'ID\'\x2Cel.id); \n\t\t\tjsonObj.set(\'target\'\x2Cevent.target.tagName); \n\t\t\tcontrolObject.triggerServerEvent(\'teccToggleClick\'\x2C jsonObj)\x2C true\n\t\t });\n             this.replaceEveryChild( btn );\n             this.applyTooltip(el);\n            this.applyUserStyle();\n        }\n        updateControl(data) {\n            super.updateControl(data);\n            let js \x3D $.parseJSON(data);\n            this.refresh();\n            this.off \x3D js.off;\n \t    this.coloron \x3D js.coloron;\n        }\n    }\n    tecc.teccToggle\x3D teccToggle;\n})(tecc || (tecc \x3D {}));", Scope = Private
 	#tag EndConstant
 
 
 	#tag ViewBehavior
 		#tag ViewProperty
-			Name="_mPanelIndex"
-			Visible=false
-			Group="Behavior"
-			InitialValue="-1"
+			Name="Index"
+			Visible=true
+			Group="ID"
+			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Name"
+			Visible=true
+			Group="ID"
+			InitialValue=""
+			Type="String"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Super"
+			Visible=true
+			Group="ID"
+			InitialValue=""
+			Type="String"
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
@@ -284,66 +310,6 @@ Inherits WebSDKUIControl
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="TabIndex"
-			Visible=true
-			Group="Visual Controls"
-			InitialValue=""
-			Type="Integer"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="Visible"
-			Visible=true
-			Group="Visual Controls"
-			InitialValue="True"
-			Type="Boolean"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="Indicator"
-			Visible=false
-			Group="Visual Controls"
-			InitialValue=""
-			Type="WebUIControl.Indicators"
-			EditorType="Enum"
-			#tag EnumValues
-				"0 - Default"
-				"1 - Primary"
-				"2 - Secondary"
-				"3 - Success"
-				"4 - Danger"
-				"5 - Warning"
-				"6 - Info"
-				"7 - Light"
-				"8 - Dark"
-				"9 - Link"
-			#tag EndEnumValues
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="Index"
-			Visible=true
-			Group="ID"
-			InitialValue="-2147483648"
-			Type="Integer"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="Name"
-			Visible=true
-			Group="ID"
-			InitialValue=""
-			Type="String"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="Super"
-			Visible=true
-			Group="ID"
-			InitialValue=""
-			Type="String"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
 			Name="Left"
 			Visible=true
 			Group="Position"
@@ -358,22 +324,6 @@ Inherits WebSDKUIControl
 			InitialValue="0"
 			Type="Integer"
 			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="_mName"
-			Visible=false
-			Group="Behavior"
-			InitialValue=""
-			Type="String"
-			EditorType="MultiLineEditor"
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="ControlID"
-			Visible=false
-			Group="Behavior"
-			InitialValue=""
-			Type="String"
-			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Enabled"
@@ -397,6 +347,82 @@ Inherits WebSDKUIControl
 			Group="Behavior"
 			InitialValue=""
 			Type="string"
+			EditorType="MultiLineEditor"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="TabIndex"
+			Visible=true
+			Group="Visual Controls"
+			InitialValue=""
+			Type="Integer"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Visible"
+			Visible=true
+			Group="Visual Controls"
+			InitialValue="True"
+			Type="Boolean"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="InitialOff"
+			Visible=true
+			Group="teccToggle"
+			InitialValue="true"
+			Type="boolean"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="ColorON"
+			Visible=true
+			Group="teccToggle"
+			InitialValue="&c000000"
+			Type="color"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="_mPanelIndex"
+			Visible=false
+			Group="Behavior"
+			InitialValue="-1"
+			Type="Integer"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Indicator"
+			Visible=false
+			Group="Visual Controls"
+			InitialValue=""
+			Type="WebUIControl.Indicators"
+			EditorType="Enum"
+			#tag EnumValues
+				"0 - Default"
+				"1 - Primary"
+				"2 - Secondary"
+				"3 - Success"
+				"4 - Danger"
+				"5 - Warning"
+				"6 - Info"
+				"7 - Light"
+				"8 - Dark"
+				"9 - Link"
+			#tag EndEnumValues
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="_mName"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="String"
+			EditorType="MultiLineEditor"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="ControlID"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="String"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 	#tag EndViewBehavior
