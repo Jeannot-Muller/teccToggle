@@ -29,16 +29,13 @@ Begin WebPage WebPage1
    _mDesignHeight  =   0
    _mDesignWidth   =   0
    _mPanelIndex    =   -1
-   Begin WebPopupMenu PopupMenu1
+   Begin teccToggle VisualControl1
       ControlID       =   ""
       Enabled         =   True
-      Height          =   38
+      Height          =   27
       Index           =   -2147483648
-      Indicator       =   ""
-      InitialValue    =   ""
-      LastAddedRowIndex=   0
-      LastRowIndex    =   0
-      Left            =   282
+      Indicator       =   0
+      Left            =   0
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -46,25 +43,18 @@ Begin WebPage WebPage1
       LockRight       =   False
       LockTop         =   True
       LockVertical    =   False
-      RowCount        =   0
-      Scope           =   2
-      SelectedRowIndex=   0
-      SelectedRowValue=   ""
-      TabIndex        =   5
+      Scope           =   0
+      TabIndex        =   1
       Tooltip         =   ""
-      Top             =   237
+      Top             =   0
       Visible         =   True
-      Width           =   150
+      Width           =   64
       _mPanelIndex    =   -1
    End
-   Begin WebButton Button1
-      AllowAutoDisable=   False
-      Cancel          =   False
-      Caption         =   "Button"
+   Begin teccToggle VisualControl2
       ControlID       =   ""
-      Default         =   False
-      Enabled         =   True
-      Height          =   38
+      Enabled         =   False
+      Height          =   27
       Index           =   -2147483648
       Indicator       =   0
       Left            =   250
@@ -75,12 +65,12 @@ Begin WebPage WebPage1
       LockRight       =   False
       LockTop         =   True
       LockVertical    =   False
-      Scope           =   2
-      TabIndex        =   4
+      Scope           =   0
+      TabIndex        =   2
       Tooltip         =   ""
-      Top             =   135
+      Top             =   86
       Visible         =   True
-      Width           =   100
+      Width           =   64
       _mPanelIndex    =   -1
    End
    Begin WebCheckbox Checkbox1
@@ -108,14 +98,17 @@ Begin WebPage WebPage1
       Width           =   100
       _mPanelIndex    =   -1
    End
-   Begin teccToggle teccToggle1
+   Begin WebButton Button1
+      AllowAutoDisable=   False
+      Cancel          =   False
+      Caption         =   "Button"
       ControlID       =   ""
-      Display         =   &c00F90000
+      Default         =   False
       Enabled         =   True
-      Height          =   34
+      Height          =   38
       Index           =   -2147483648
-      Indicator       =   ""
-      Left            =   20
+      Indicator       =   0
+      Left            =   250
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -123,63 +116,42 @@ Begin WebPage WebPage1
       LockRight       =   False
       LockTop         =   True
       LockVertical    =   False
-      Powered         =   True
-      Scope           =   0
-      TabIndex        =   6
-      Tooltip         =   ""
-      Top             =   20
-      Visible         =   True
-      Width           =   100
-      _mPanelIndex    =   -1
-   End
-   Begin teccToggle teccToggle2
-      ControlID       =   ""
-      Display         =   &cFF930000
-      Enabled         =   True
-      Height          =   34
-      Index           =   -2147483648
-      Indicator       =   ""
-      Left            =   190
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      Powered         =   False
-      Scope           =   0
-      TabIndex        =   7
-      Tooltip         =   ""
-      Top             =   20
-      Visible         =   True
-      Width           =   100
-      _mPanelIndex    =   -1
-   End
-   Begin teccToggle teccToggle3
-      ControlID       =   ""
-      Display         =   &c0096FF00
-      Enabled         =   True
-      Height          =   34
-      Index           =   -2147483648
-      indicator       =   0
-      Left            =   332
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      PanelIndex      =   0
-      Powered         =   True
-      Scope           =   0
-      TabIndex        =   8
+      Scope           =   2
+      TabIndex        =   4
       TabStop         =   True
-      Tooltip         =   "test"
-      Top             =   20
+      Tooltip         =   ""
+      Top             =   135
       Visible         =   True
       Width           =   100
+      _mPanelIndex    =   -1
+   End
+   Begin WebPopupMenu PopupMenu1
+      ControlID       =   ""
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   ""
+      InitialValue    =   ""
+      LastAddedRowIndex=   0
+      LastRowIndex    =   0
+      Left            =   282
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      RowCount        =   0
+      Scope           =   2
+      SelectedRowIndex=   0
+      SelectedRowValue=   ""
+      TabIndex        =   5
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   237
+      Visible         =   True
+      Width           =   150
       _mPanelIndex    =   -1
    End
 End
@@ -188,9 +160,12 @@ End
 #tag WindowCode
 #tag EndWindowCode
 
-#tag Events teccToggle1
+#tag Events VisualControl1
+#tag EndEvents
+#tag Events VisualControl2
 	#tag Event
-		Sub Shown()
+		Sub onItemClick()
+		  messageBox("Button2")
 		  
 		End Sub
 	#tag EndEvent
