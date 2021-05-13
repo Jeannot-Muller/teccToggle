@@ -53,7 +53,7 @@ Begin WebPage WebPage1
    End
    Begin teccToggle VisualControl2
       ControlID       =   ""
-      Enabled         =   True
+      Enabled         =   False
       Height          =   27
       Index           =   -2147483648
       Indicator       =   0
@@ -161,18 +161,12 @@ End
 #tag EndWindowCode
 
 #tag Events VisualControl1
-	#tag Event
-		Sub onItemClick()
-		  'MessageBox("you clicked me")
-		  
-		End Sub
-	#tag EndEvent
 #tag EndEvents
 #tag Events VisualControl2
 	#tag Event
 		Sub onItemClick()
-		  'messageBox("You clicked me too")
-		  'break
+		  messageBox("Button2")
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents

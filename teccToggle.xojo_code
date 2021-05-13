@@ -4,11 +4,14 @@ Inherits WebSDKUIControl
 	#tag Event
 		Sub DrawControlInLayoutEditor(g as graphics)
 		  // Visual WebSDK controls can "draw" themselves in the IDE
-		  g.DrawingColor = &cFF0000
-		  g.drawoval(0,0,g.Width,g.Height)
-		  
 		  g.DrawingColor = &c000000
-		  g.DrawText "Visual Control", 0, g.Height/2
+		  g.DrawText "teccToggle", 0, g.Height/2
+		  
+		  If BooleanProperty("enabled") = False Then
+		    g.Transparency = 60
+		  Else
+		    g.Transparency = 0
+		  End If
 		End Sub
 	#tag EndEvent
 
@@ -16,11 +19,16 @@ Inherits WebSDKUIControl
 		Function ExecuteEvent(name as string, parameters as JSONItem) As Boolean
 		  // Events sent with TriggerServerEvent using your controlID will end up here
 		  Try
+		    
 		    Select Case Name
 		    Case "onItemClick"
 		      
 		      Try
 		        If Parameters.HasName("ID") Then
+		          Var test1 As String = Parameters.value("ID")
+		          Var test2 As String = Me.ControlID
+		          Break
+		          
 		          
 		          If Me.Enabled Then
 		            onItemClick()
@@ -49,6 +57,7 @@ Inherits WebSDKUIControl
 		  // Requests sent to the session with the following pattern
 		  // 
 		  // /<Session Identifier>/sdk/<controlID>/request_path
+		  break
 		  
 		End Function
 	#tag EndEvent
@@ -62,19 +71,8 @@ Inherits WebSDKUIControl
 
 	#tag Event
 		Sub Opening()
-		  Dim source() As String
-		  source.Append("var aggiungi = `")
-		  source.Append("<button class='btn' ")
-		  'source.Append("style="+Chr(34)+"width:100%;height:100%;background:#"+"FF0000"+";padding:2px; ")
-		  'source.Append("color:#"+"FFFFFF"+";text-transform: none;cursor:pointer;")
-		  'source.Append("line-height: "+Str(Self.Height)+"px; "+Chr(34)+">")
-		  source.Append(">Toggle</button>")
-		  source.Append("`;")
-		  
-		  source.Append("document.getElementById('"+Self.ControlID+"').innerHTML += aggiungi;")
-		  
-		  'Session.ExecuteJavaScript(Join(source,""))
-		  self.Style.value("outline") = "none"
+		  Self.Style.value("outline") = "none"
+		  Create = True
 		  
 		End Sub
 	#tag EndEvent
@@ -92,16 +90,68 @@ Inherits WebSDKUIControl
 		  // Return an array of CSS URLs for your control
 		  // Here's one way to do this...
 		  
-		  If MyControlCSS = Nil Then
-		    MyControlCSS = New WebFile
-		    MyControlCSS.Filename = "myclass.css"
-		    MyControlCSS.MIMEType = "text/css"
-		    MyControlCSS.data = "#" + Self.ControlID + " { color: red }"
-		    MyControlCSS.Session = Nil // Very important, so this file will be available to all sessions
+		  Var cssStr As String
+		  Var css() As String
+		  
+		  css.Add(".toggle {")
+		  css.Add("margin:0 0 0 2rem;")
+		  css.Add("position: relative;")
+		  css.Add("display: inline-block;")
+		  css.Add("width: 4rem;")
+		  css.Add("height: 1.7rem;")
+		  css.Add("}")
+		  
+		  css.Add(".toggle Input {")
+		  css.Add("display: none;")
+		  css.Add("}")
+		  
+		  css.Add(".roundbutton {")
+		  css.Add("position: absolute;")
+		  css.Add("top: 0;")
+		  css.Add("Left: -33px;")
+		  css.Add("bottom: 0;")
+		  css.Add("Right: 0;")
+		  css.Add("width: 100%;")
+		  css.Add("background-Color: #33455e;")
+		  css.Add("display: block;")
+		  css.Add("transition: all 0.3s;")
+		  css.Add("border-radius: 1.7rem;")
+		  css.Add("cursor: pointer;")
+		  css.Add("}")
+		  
+		  css.Add(".roundbutton:before {")
+		  css.Add("position: absolute;")
+		  css.Add("content: '';")
+		  css.Add("height: 1.1rem;")
+		  css.Add("width: 1.2rem;")
+		  css.Add("border-radius: 100%;")
+		  css.Add("display: block;")
+		  css.Add("Left: 0.5rem;")
+		  css.Add("bottom: 0.31rem;")
+		  css.Add("background-Color: white;")
+		  css.Add("transition: all 0.3s;")
+		  css.Add("}")
+		  
+		  css.Add("Input:checked + .roundbutton {")
+		  css.Add("background-Color: #FF6E48;")
+		  css.Add("}")
+		  
+		  css.Add("Input:checked + .roundbutton:before  {")
+		  css.Add("transform: translate(1.9Rem, 0);")
+		  css.Add("}")
+		  
+		  cssStr = Join(css, "" )
+		  
+		  If teccToggleCSS = Nil Then
+		    teccToggleCSS = New WebFile
+		    teccToggleCSS.Filename = "teccToggle.css"
+		    teccToggleCSS.MIMEType = "text/css"
+		    teccToggleCSS.data = cssStr
+		    teccToggleCSS.Session = Nil // Very important, so this file will be available to all sessions
 		  End If
 		  
 		  Var urls() As String
-		  urls.Append MyControlCSS.URL
+		  urls.Append teccToggleCSS.URL
 		  
 		  Return urls
 		End Function
@@ -125,6 +175,7 @@ Inherits WebSDKUIControl
 		  
 		  Dim urls() As String
 		  urls.Append JSFramework.URL
+		  'Call DoEnabled()
 		  
 		  Return urls
 		End Function
@@ -136,16 +187,20 @@ Inherits WebSDKUIControl
 	#tag EndHook
 
 
+	#tag Property, Flags = &h0
+		Create As Boolean
+	#tag EndProperty
+
 	#tag Property, Flags = &h21
 		Private Shared JSFramework As WebFile
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private Shared MyControlCSS As WebFile
+		Private Shared teccToggleCSS As WebFile
 	#tag EndProperty
 
 
-	#tag Constant, Name = kJSCode, Type = String, Dynamic = False, Default = \"var tecc;\n(function (tecc) {\n    class teccToggle extends XojoWeb.XojoVisualControl {\n        constructor(id\x2C events) {\n            super(id\x2C events);\n        }\n        render() {\n            super.render();\n            let el \x3D this.DOMElement();\n            if (!el)\n                return;\n            this.setAttributes();\n            var idstr \x3D el.id + \"_teccToggle\"        \n            let btn \x3D document.createElement(\"div\");\n            //btn.style.cssText \x3D \"text-transform: none;cursor:pointer;\"\n\t     btn.innerHTML \x3D \"<label class\x3D\'toggle\'><input id\x3D\'toggleswitch\' class\x3D\'teccCB\' type\x3D\'checkbox\'><span class\x3D\'roundbutton\'></span></label>\";\n             btn.id \x3D idstr;\n             btn.addEventListener(\"click\"\x2C function(event) {var ID \x3D $(this).attr(\'id\');var jsonObj \x3D new XojoWeb.JSONItem(); jsonObj.set(\'ID\'\x2CID);XojoWeb.session.comm.triggerServerEvent( el.id\x2C \'onItemClick\'\x2C jsonObj\x2C true);});\n\n             this.replaceEveryChild( btn );\n            this.applyUserStyle();\n        }\n        updateControl(data) {\n            super.updateControl(data);\n            this.refresh();\n        }\n    }\n    tecc.teccToggle\x3D teccToggle;\n})(tecc || (tecc \x3D {}));", Scope = Private
+	#tag Constant, Name = kJSCode, Type = String, Dynamic = False, Default = \"var tecc;\n(function (tecc) {\n    class teccToggle extends XojoWeb.XojoVisualControl {\n        constructor(id\x2C events) {\n            super(id\x2C events);\n        }\n        render() {\n            super.render();\n            let el \x3D this.DOMElement();\n            if (!el)\n                return;\n            this.setAttributes();\n            var idstr \x3D el.id + \"_teccToggle\"        \n            let btn \x3D document.createElement(\"div\");\n            //btn.style.cssText \x3D \"text-transform: none;cursor:pointer;\"\n            var disabledStr \x3D \"\"\n             if (!this.enabled) { disabledStr \x3D \"disabled\x3D\'disabled\'\"}\n\t     btn.innerHTML \x3D \"<label class\x3D\'toggle\'><input id\x3D\'toggleswitch\' class\x3D\'teccCB\' type\x3D\'checkbox\'\" + disabledStr + \"><span class\x3D\'roundbutton\'></span></label>\";\n             btn.id \x3D idstr;\nvar controlObject \x3D XojoWeb.getNamedControl( el.id );\nvar jsonObj \x3D new XojoWeb.JSONItem(); \n\njsonObj.set(\'ID\'\x2Cel.id); \n             btn.addEventListener(\"click\"\x2C function(event) { controlObject.triggerServerEvent(\'onItemClick\'\x2C jsonObj); }\x2C true);\n             this.replaceEveryChild( btn );\n            this.applyUserStyle();\n        }\n        updateControl(data) {\n            super.updateControl(data);\n            this.refresh();\n        }\n    }\n    tecc.teccToggle\x3D teccToggle;\n})(tecc || (tecc \x3D {}));", Scope = Private
 	#tag EndConstant
 
 
@@ -318,6 +373,14 @@ Inherits WebSDKUIControl
 			Name="Enabled"
 			Visible=true
 			Group="Appearance"
+			InitialValue=""
+			Type="Boolean"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Create"
+			Visible=false
+			Group="Behavior"
 			InitialValue=""
 			Type="Boolean"
 			EditorType=""
