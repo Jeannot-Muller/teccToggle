@@ -29,58 +29,6 @@ Begin WebPage WebPage1
    _mDesignHeight  =   0
    _mDesignWidth   =   0
    _mPanelIndex    =   -1
-   Begin teccToggle teccToggle2
-      ColorON         =   &c00FCFF00
-      ControlID       =   ""
-      Enabled         =   True
-      Height          =   34
-      Index           =   -2147483648
-      Indicator       =   0
-      InitialOff      =   True
-      Left            =   217
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      objectid        =   ""
-      Scope           =   0
-      TabIndex        =   2
-      Tooltip         =   ""
-      Top             =   20
-      value           =   ""
-      Visible         =   True
-      Width           =   100
-      _mPanelIndex    =   -1
-   End
-   Begin teccToggle teccToggle1
-      ColorON         =   &c8DF90000
-      ControlID       =   ""
-      Enabled         =   True
-      Height          =   34
-      Index           =   -2147483648
-      Indicator       =   0
-      InitialOff      =   False
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      objectid        =   ""
-      Scope           =   0
-      TabIndex        =   6
-      Tooltip         =   "erster"
-      Top             =   20
-      value           =   ""
-      Visible         =   True
-      Width           =   100
-      _mPanelIndex    =   -1
-   End
    Begin WebLabel lbl1
       Bold            =   False
       ControlID       =   ""
@@ -91,7 +39,7 @@ Begin WebPage WebPage1
       Index           =   -2147483648
       Indicator       =   ""
       Italic          =   False
-      Left            =   20
+      Left            =   68
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -106,7 +54,7 @@ Begin WebPage WebPage1
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   62
+      Top             =   155
       Underline       =   False
       Visible         =   True
       Width           =   100
@@ -122,7 +70,7 @@ Begin WebPage WebPage1
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   217
+      Left            =   265
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -137,35 +85,8 @@ Begin WebPage WebPage1
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   62
+      Top             =   155
       Underline       =   False
-      Visible         =   True
-      Width           =   100
-      _mPanelIndex    =   -1
-   End
-   Begin teccToggle teccToggle3
-      ColorON         =   &c521B9200
-      ControlID       =   ""
-      Enabled         =   True
-      Height          =   34
-      Index           =   -2147483648
-      Indicator       =   ""
-      InitialOff      =   True
-      Left            =   383
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      objectid        =   ""
-      Scope           =   0
-      TabIndex        =   9
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   20
-      value           =   ""
       Visible         =   True
       Width           =   100
       _mPanelIndex    =   -1
@@ -180,7 +101,7 @@ Begin WebPage WebPage1
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   383
+      Left            =   431
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -189,45 +110,265 @@ Begin WebPage WebPage1
       LockTop         =   True
       LockVertical    =   False
       Multiline       =   False
-      PanelIndex      =   0
       Scope           =   0
       TabIndex        =   10
-      TabStop         =   True
       Text            =   "-"
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   62
+      Top             =   155
       Underline       =   False
       Visible         =   True
       Width           =   100
+      _mPanelIndex    =   -1
+   End
+   Begin WebLabel lbl4
+      Bold            =   False
+      ControlID       =   ""
+      Enabled         =   True
+      FontName        =   ""
+      FontSize        =   0.0
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   0
+      Italic          =   False
+      Left            =   68
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Multiline       =   False
+      Scope           =   0
+      TabIndex        =   11
+      Text            =   "-"
+      TextAlignment   =   0
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   201
+      Underline       =   False
+      Visible         =   True
+      Width           =   100
+      _mPanelIndex    =   -1
+   End
+   Begin WebLabel lbl5
+      Bold            =   False
+      ControlID       =   ""
+      Enabled         =   False
+      FontName        =   ""
+      FontSize        =   0.0
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   0
+      Italic          =   False
+      Left            =   265
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Multiline       =   False
+      Scope           =   0
+      TabIndex        =   12
+      Text            =   "-"
+      TextAlignment   =   0
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   201
+      Underline       =   False
+      Visible         =   True
+      Width           =   100
+      _mPanelIndex    =   -1
+   End
+   Begin WebLabel lbl6
+      Bold            =   False
+      ControlID       =   ""
+      Enabled         =   False
+      FontName        =   ""
+      FontSize        =   0.0
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   0
+      Italic          =   False
+      Left            =   431
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Multiline       =   False
+      Scope           =   0
+      TabIndex        =   13
+      Text            =   "-"
+      TextAlignment   =   0
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   201
+      Underline       =   False
+      Visible         =   True
+      Width           =   100
+      _mPanelIndex    =   -1
+   End
+   Begin teccToggle teccToggle1
+      ControlID       =   ""
+      Design          =   &cFF930000
+      Enabled         =   True
+      Height          =   34
+      Index           =   -2147483648
+      Indicator       =   0
+      InitialOff      =   False
+      Left            =   68
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      objectid        =   ""
+      Scope           =   0
+      status          =   ""
+      TabIndex        =   14
+      Tooltip         =   ""
+      Top             =   113
+      Visible         =   True
+      Width           =   100
+      _mPanelIndex    =   -1
+   End
+   Begin teccToggle teccToggle2
+      ControlID       =   ""
+      Design          =   &c008F5100
+      Enabled         =   True
+      Height          =   34
+      Index           =   -2147483648
+      Indicator       =   0
+      InitialOff      =   True
+      Left            =   265
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      objectid        =   ""
+      Scope           =   0
+      status          =   ""
+      TabIndex        =   15
+      Tooltip         =   ""
+      Top             =   113
+      Visible         =   True
+      Width           =   100
+      _mPanelIndex    =   -1
+   End
+   Begin teccToggle teccToggle3
+      ControlID       =   ""
+      Design          =   &c3D90F800
+      Enabled         =   True
+      Height          =   34
+      Index           =   -2147483648
+      Indicator       =   0
+      InitialOff      =   True
+      Left            =   431
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      objectid        =   ""
+      Scope           =   0
+      status          =   ""
+      TabIndex        =   16
+      Tooltip         =   ""
+      Top             =   113
+      Visible         =   True
+      Width           =   100
+      _mPanelIndex    =   -1
+   End
+   Begin teccToggle teccToggle4
+      ControlID       =   ""
+      Design          =   &c008F5100
+      Enabled         =   True
+      Height          =   34
+      Index           =   -2147483648
+      Indicator       =   0
+      InitialOff      =   True
+      Left            =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      objectid        =   ""
+      PanelIndex      =   0
+      Scope           =   0
+      status          =   ""
+      TabIndex        =   17
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   0
+      Visible         =   True
+      Width           =   60
       _mPanelIndex    =   -1
    End
 End
 #tag EndWebPage
 
 #tag WindowCode
+	#tag Event
+		Sub Opening()
+		  lbl4.Text = teccToggle1.status
+		  lbl5.Text = teccToggle2.status
+		  lbl6.Text = teccToggle3.status
+		End Sub
+	#tag EndEvent
+
+
 #tag EndWindowCode
 
-#tag Events teccToggle2
-	#tag Event
+#tag Events teccToggle1
+	#tag Event , Description = 4669726573207768656E2074686520636F6E74726F6C20697320636C69636B65642E2052657475726E7320746865206368616E676564207374617475732E0A737461747573203D2074686520737461747573206F662074686520636F6E74726F6C2E0A6F626A6563746964203D20746865206964206F6620746865206372656174656420444F4D20656C656D656E742E
 		Sub teccToggleClick()
-		  lbl2.Text = Me.objectid
+		  lbl1.Text = Me.objectid
+		  lbl4.Text = Me.status
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events teccToggle1
-	#tag Event
+#tag Events teccToggle2
+	#tag Event , Description = 4669726573207768656E2074686520636F6E74726F6C20697320636C69636B65642E2052657475726E7320746865206368616E676564207374617475732E0A737461747573203D2074686520737461747573206F662074686520636F6E74726F6C2E0A6F626A6563746964203D20746865206964206F6620746865206372656174656420444F4D20656C656D656E742E
 		Sub teccToggleClick()
-		  lbl1.Text = Me.objectid
+		  lbl2.Text = Me.objectid
+		  lbl5.Text = Me.status
 		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events teccToggle3
-	#tag Event
+	#tag Event , Description = 4669726573207768656E2074686520636F6E74726F6C20697320636C69636B65642E2052657475726E7320746865206368616E676564207374617475732E0A737461747573203D2074686520737461747573206F662074686520636F6E74726F6C2E0A6F626A6563746964203D20746865206964206F6620746865206372656174656420444F4D20656C656D656E742E
 		Sub teccToggleClick()
 		  lbl3.Text = Me.objectid
+		  lbl6.Text = Me.status
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events teccToggle4
+	#tag Event , Description = 4669726573207768656E2074686520636F6E74726F6C20697320636C69636B65642E2052657475726E7320746865206368616E676564207374617475732E0A737461747573203D2074686520737461747573206F662074686520636F6E74726F6C2E0A6F626A6563746964203D20746865206964206F6620746865206372656174656420444F4D20656C656D656E742E
+		Sub teccToggleClick()
+		  lbl2.Text = Me.objectid
+		  lbl5.Text = Me.status
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents

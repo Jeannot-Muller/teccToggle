@@ -25,29 +25,20 @@ Inherits WebSDKUIControl
 		      
 		      Try
 		        If parameters.value("target") = "INPUT" Then
-		          If Parameters.HasName("ID") Then
+		          If Me.Enabled Then
+		            objectid = Parameters.value("ID")
+		            value = Parameters.value("value")
+		            if value = true then status = "on" else status = "off"
+		            teccToggleClick()
 		            
-		            
-		            If Me.Enabled Then
-		              objectid = Parameters.value("ID")
-		              'value = test2
-		              teccToggleClick()
-		              
-		              Return True
-		            End If 
-		            
-		          End If
+		            Return True
+		          End If 
 		        End If
 		      Catch err As OutOfBoundsException
 		        
 		      End Try
 		      
-		      
-		      
 		    End Select
-		    
-		    
-		    
 		    
 		  Catch
 		    
@@ -75,6 +66,14 @@ Inherits WebSDKUIControl
 	#tag Event
 		Sub Opening()
 		  Self.Style.value("outline") = "none"
+		  If InitialOff = True then
+		    value = False
+		  Else
+		    value = True
+		  End If
+		  
+		  If value = True Then status = "on" Else status = "off"
+		  
 		  
 		End Sub
 	#tag EndEvent
@@ -83,7 +82,7 @@ Inherits WebSDKUIControl
 		Sub Serialize(js as JSONItem)
 		  // Use this method to serialize the data your control needs for initial setup
 		  js.value("off") = initialOff
-		  js.value("coloron") = "#" + ColorON.ToString.right(6)
+		  js.value("coloron") = "#" + Design.ToString.right(6)
 		  
 		  
 		End Sub
@@ -186,13 +185,13 @@ Inherits WebSDKUIControl
 	#tag EndEvent
 
 
-	#tag Hook, Flags = &h0
+	#tag Hook, Flags = &h0, Description = 4669726573207768656E2074686520636F6E74726F6C20697320636C69636B65642E2052657475726E7320746865206368616E676564207374617475732E0A737461747573203D2074686520737461747573206F662074686520636F6E74726F6C2E0A6F626A6563746964203D20746865206964206F6620746865206372656174656420444F4D20656C656D656E742E
 		Event teccToggleClick()
 	#tag EndHook
 
 
-	#tag Property, Flags = &h0, Description = 436F6C6F72204F4E
-		ColorON As color = &c3D90F8
+	#tag Property, Flags = &h0, Description = 44657369676E
+		Design As color = &c3D90F8
 	#tag EndProperty
 
 	#tag Property, Flags = &h0, Description = 496E697469616C204F4646
@@ -207,16 +206,20 @@ Inherits WebSDKUIControl
 		objectid As string
 	#tag EndProperty
 
+	#tag Property, Flags = &h0
+		status As string
+	#tag EndProperty
+
 	#tag Property, Flags = &h21
 		Private Shared teccToggleCSS As WebFile
 	#tag EndProperty
 
-	#tag Property, Flags = &h0
-		value As string
+	#tag Property, Flags = &h21
+		Private value As boolean
 	#tag EndProperty
 
 
-	#tag Constant, Name = kJSCode, Type = String, Dynamic = False, Default = \"var tecc;\n(function (tecc) {\n    class teccToggle extends XojoWeb.XojoVisualControl {\n        constructor(id\x2C events) {\n            super(id\x2C events);\n        }\n        render() {\n            super.render();\n            let el \x3D this.DOMElement();\n            if (!el)\n                return;\n            this.setAttributes();\n            var idstr \x3D el.id + \"_teccToggle\"        \n            let btn \x3D document.createElement(\"div\");\n            //btn.style.cssText \x3D \"text-transform: none;cursor:pointer;\"\n            var disabledStr \x3D \"\"\n             if (!this.enabled) { disabledStr \x3D \"disabled\x3D\'disabled\'\"}\n            var iOff \x3D \"\"\n             if (this.off\x3D\x3Dtrue) { iOff\x3D \"checked\x3D\'checked\'\"}\n            var cbid \x3D \"ts\" + idstr\n\t     btn.innerHTML \x3D \"<label class\x3D\'toggle\'><input id\x3D\'\" + cbid + \"\' + class\x3D\'teccCB\' \" + iOff + \" type\x3D\'checkbox\' \" + disabledStr + \"><span class\x3D\'roundbutton\' style\x3D\'background-color:\" + this.coloron +  \"\'></span></label>\";\n             btn.id \x3D idstr;\n\n             btn.addEventListener(\"click\"\x2C function(event) { \n\t\t\tvar controlObject \x3D XojoWeb.getNamedControl( el.id );\n\t\t\tvar jsonObj \x3D new XojoWeb.JSONItem(); \n\t\t\tjsonObj.set(\'ID\'\x2Cel.id); \n\t\t\tjsonObj.set(\'target\'\x2Cevent.target.tagName); \n                       jsonObj.set(\'value\'\x2C document.getElementById(cbid).checked);\n\t\t\tcontrolObject.triggerServerEvent(\'teccToggleClick\'\x2C jsonObj)\x2C true\n\t\t });\n             this.replaceEveryChild( btn );\n             this.applyTooltip(el);\n            this.applyUserStyle();\n        }\n        updateControl(data) {\n            super.updateControl(data);\n            let js \x3D $.parseJSON(data);\n            this.refresh();\n            this.off \x3D js.off;\n \t    this.coloron \x3D js.coloron;\n        }\n    }\n    tecc.teccToggle\x3D teccToggle;\n})(tecc || (tecc \x3D {}));", Scope = Private
+	#tag Constant, Name = kJSCode, Type = String, Dynamic = False, Default = \"var tecc;\n(function (tecc) {\n    class teccToggle extends XojoWeb.XojoVisualControl {\n        constructor(id\x2C events) {\n            super(id\x2C events);\n        }\n        render() {\n            super.render();\n            let el \x3D this.DOMElement();\n            if (!el)\n                return;\n            this.setAttributes();\n            var idstr \x3D el.id + \"_teccToggle\"        \n            let btn \x3D document.createElement(\"div\");\n            var disabledStr \x3D \"\"\n            if (!this.enabled) { disabledStr \x3D \"disabled\x3D\'disabled\'\"}\n            var iOff \x3D \"\"\n            if (this.off\x3D\x3Dtrue) { iOff\x3D \"checked\x3D\'checked\'\"}\n            var cbid \x3D \"ts\" + idstr\n\t        btn.innerHTML \x3D \"<label class\x3D\'toggle\'><input id\x3D\'\" + cbid + \"\' + class\x3D\'teccCB\' \" + iOff + \" type\x3D\'checkbox\' \" + disabledStr + \"><span class\x3D\'roundbutton\' style\x3D\'background-color:\" + this.coloron +  \"\'></span></label>\";\n            btn.id \x3D idstr;\n            btn.addEventListener(\"click\"\x2C function(event) { \n\t\t\t    var controlObject \x3D XojoWeb.getNamedControl( el.id );\n\t\t\t    var jsonObj \x3D new XojoWeb.JSONItem(); \n\t\t\t    jsonObj.set(\'ID\'\x2Cel.id); \n\t\t\t    jsonObj.set(\'target\'\x2Cevent.target.tagName); \n                var c \x3D document.getElementById(cbid).checked\n                jsonObj.set(\'value\'\x2C !c);\n\t\t\t    controlObject.triggerServerEvent(\'teccToggleClick\'\x2C jsonObj)\x2C true\n\t\t        });\n            this.replaceEveryChild( btn );\n            this.applyTooltip(el);\n            this.applyUserStyle();\n        }\n        updateControl(data) {\n            super.updateControl(data);\n            let js \x3D $.parseJSON(data);\n            this.refresh();\n            this.off \x3D js.off;\n \t    this.coloron \x3D js.coloron;\n        }\n    }\n    tecc.teccToggle\x3D teccToggle;\n})(tecc || (tecc \x3D {}));", Scope = Private
 	#tag EndConstant
 
 
@@ -334,7 +337,7 @@ Inherits WebSDKUIControl
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="value"
+			Name="objectid"
 			Visible=false
 			Group="Behavior"
 			InitialValue=""
@@ -342,7 +345,7 @@ Inherits WebSDKUIControl
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="objectid"
+			Name="status"
 			Visible=false
 			Group="Behavior"
 			InitialValue=""
@@ -374,10 +377,10 @@ Inherits WebSDKUIControl
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="ColorON"
+			Name="Design"
 			Visible=true
 			Group="teccToggle"
-			InitialValue="&c000000"
+			InitialValue="&c3D90F8"
 			Type="color"
 			EditorType=""
 		#tag EndViewProperty
