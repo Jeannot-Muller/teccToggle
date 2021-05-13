@@ -27,7 +27,6 @@ Inherits WebSDKUIControl
 		        If Parameters.HasName("ID") Then
 		          Var test1 As String = Parameters.value("ID")
 		          Var test2 As String = Me.ControlID
-		          Break
 		          
 		          
 		          If Me.Enabled Then
@@ -57,7 +56,7 @@ Inherits WebSDKUIControl
 		  // Requests sent to the session with the following pattern
 		  // 
 		  // /<Session Identifier>/sdk/<controlID>/request_path
-		  break
+		  
 		  
 		End Function
 	#tag EndEvent
@@ -72,7 +71,6 @@ Inherits WebSDKUIControl
 	#tag Event
 		Sub Opening()
 		  Self.Style.value("outline") = "none"
-		  Create = True
 		  
 		End Sub
 	#tag EndEvent
@@ -80,6 +78,9 @@ Inherits WebSDKUIControl
 	#tag Event
 		Sub Serialize(js as JSONItem)
 		  // Use this method to serialize the data your control needs for initial setup
+		  js.Value("powered") = Powered
+		  js.Value("display") = Display.tostring.Right(6)
+		  
 		  
 		  
 		End Sub
@@ -112,7 +113,7 @@ Inherits WebSDKUIControl
 		  css.Add("bottom: 0;")
 		  css.Add("Right: 0;")
 		  css.Add("width: 100%;")
-		  css.Add("background-Color: #33455e;")
+		  css.Add("background-Color: #000000" )
 		  css.Add("display: block;")
 		  css.Add("transition: all 0.3s;")
 		  css.Add("border-radius: 1.7rem;")
@@ -133,7 +134,7 @@ Inherits WebSDKUIControl
 		  css.Add("}")
 		  
 		  css.Add("Input:checked + .roundbutton {")
-		  css.Add("background-Color: #FF6E48;")
+		  css.Add("background-Color: #929292 !important;")
 		  css.Add("}")
 		  
 		  css.Add("Input:checked + .roundbutton:before  {")
@@ -187,12 +188,16 @@ Inherits WebSDKUIControl
 	#tag EndHook
 
 
-	#tag Property, Flags = &h0
-		Create As Boolean
+	#tag Property, Flags = &h0, Description = 446973706C6179
+		Display As color = &c00f900
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
 		Private Shared JSFramework As WebFile
+	#tag EndProperty
+
+	#tag Property, Flags = &h0, Description = 506F7765726564
+		Powered As boolean = False
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
@@ -200,17 +205,33 @@ Inherits WebSDKUIControl
 	#tag EndProperty
 
 
-	#tag Constant, Name = kJSCode, Type = String, Dynamic = False, Default = \"var tecc;\n(function (tecc) {\n    class teccToggle extends XojoWeb.XojoVisualControl {\n        constructor(id\x2C events) {\n            super(id\x2C events);\n        }\n        render() {\n            super.render();\n            let el \x3D this.DOMElement();\n            if (!el)\n                return;\n            this.setAttributes();\n            var idstr \x3D el.id + \"_teccToggle\"        \n            let btn \x3D document.createElement(\"div\");\n            //btn.style.cssText \x3D \"text-transform: none;cursor:pointer;\"\n            var disabledStr \x3D \"\"\n             if (!this.enabled) { disabledStr \x3D \"disabled\x3D\'disabled\'\"}\n\t     btn.innerHTML \x3D \"<label class\x3D\'toggle\'><input id\x3D\'toggleswitch\' class\x3D\'teccCB\' type\x3D\'checkbox\'\" + disabledStr + \"><span class\x3D\'roundbutton\'></span></label>\";\n             btn.id \x3D idstr;\nvar controlObject \x3D XojoWeb.getNamedControl( el.id );\nvar jsonObj \x3D new XojoWeb.JSONItem(); \n\njsonObj.set(\'ID\'\x2Cel.id); \n             btn.addEventListener(\"click\"\x2C function(event) { controlObject.triggerServerEvent(\'onItemClick\'\x2C jsonObj); }\x2C true);\n             this.replaceEveryChild( btn );\n            this.applyUserStyle();\n        }\n        updateControl(data) {\n            super.updateControl(data);\n            this.refresh();\n        }\n    }\n    tecc.teccToggle\x3D teccToggle;\n})(tecc || (tecc \x3D {}));", Scope = Private
+	#tag Constant, Name = kJSCode, Type = String, Dynamic = False, Default = \"var tecc;\n(function (tecc) {\n    class teccToggle extends XojoWeb.XojoVisualControl {\n        constructor(id\x2C events) {\n            super(id\x2C events);\n        }\n        render() {\n            super.render();\n            let el \x3D this.DOMElement();\n            if (!el)\n                return;\n            this.setAttributes();\n\n            var idstr \x3D el.id + \"_teccToggle\"        \n            let btn \x3D document.createElement(\"div\");\n            //btn.style.cssText \x3D \"text-transform: none;cursor:pointer;\"\n            var disabledStr \x3D \"\";\n             if (!this.enabled) { disabledStr \x3D \"disabled\x3D\'disabled\'\"};\n            var onColorStr \x3D \"\";\n             onColorStr\x3D \"style\x3D\'background-color: #\" + this.display + \"\' }}\" ;\n            var checkedStr \x3D \"\";\n             if ( !this.powered  ) {checkedStr\x3D\"checked\"} else { checkedStr\x3D\"\" };\n\t     btn.innerHTML \x3D \"<label class\x3D\'toggle\'><input id\x3D\'toggleswitch\' \" + checkedStr + \" class\x3D\'teccCB\' type\x3D\'checkbox\'\" + disabledStr + \"><span class\x3D\'roundbutton\' \" + onColorStr +\"></span></label>\";\n             btn.id \x3D idstr;\nvar controlObject \x3D XojoWeb.getNamedControl( el.id );\nvar jsonObj \x3D new XojoWeb.JSONItem(); \n\njsonObj.set(\'ID\'\x2Cel.id); \n             btn.addEventListener(\"click\"\x2C function(event) { controlObject.triggerServerEvent(\'onItemClick\'\x2C jsonObj); }\x2C true);\n             this.replaceEveryChild( btn );\n \t      this.applyTooltip(el);\n            this.applyUserStyle(el);\n            //this.applyUserStyle();\n        }\n        updateControl(data) {\n            super.updateControl(data);\nlet js \x3D $.parseJSON(data);\nthis.display \x3D js.display;\nthis.powered \x3D js.powered;\n            this.refresh();\n        }\n    }\n    tecc.teccToggle\x3D teccToggle;\n})(tecc || (tecc \x3D {}));", Scope = Private
 	#tag EndConstant
 
 
 	#tag ViewBehavior
 		#tag ViewProperty
-			Name="_mPanelIndex"
-			Visible=false
-			Group="Behavior"
-			InitialValue="-1"
+			Name="Index"
+			Visible=true
+			Group="ID"
+			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Name"
+			Visible=true
+			Group="ID"
+			InitialValue=""
+			Type="String"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Super"
+			Visible=true
+			Group="ID"
+			InitialValue=""
+			Type="String"
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
@@ -278,6 +299,46 @@ Inherits WebSDKUIControl
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
+			Name="Left"
+			Visible=true
+			Group="Position"
+			InitialValue="0"
+			Type="Integer"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Top"
+			Visible=true
+			Group="Position"
+			InitialValue="0"
+			Type="Integer"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Enabled"
+			Visible=true
+			Group="Appearance"
+			InitialValue=""
+			Type="Boolean"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Display"
+			Visible=true
+			Group="Behavior"
+			InitialValue="&c00f900"
+			Type="color"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Powered"
+			Visible=true
+			Group="Behavior"
+			InitialValue="False"
+			Type="boolean"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
 			Name="TabIndex"
 			Visible=true
 			Group="Visual Controls"
@@ -291,6 +352,14 @@ Inherits WebSDKUIControl
 			Group="Visual Controls"
 			InitialValue="True"
 			Type="Boolean"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="_mPanelIndex"
+			Visible=false
+			Group="Behavior"
+			InitialValue="-1"
+			Type="Integer"
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
@@ -314,46 +383,6 @@ Inherits WebSDKUIControl
 			#tag EndEnumValues
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="Index"
-			Visible=true
-			Group="ID"
-			InitialValue="-2147483648"
-			Type="Integer"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="Name"
-			Visible=true
-			Group="ID"
-			InitialValue=""
-			Type="String"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="Super"
-			Visible=true
-			Group="ID"
-			InitialValue=""
-			Type="String"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="Left"
-			Visible=true
-			Group="Position"
-			InitialValue="0"
-			Type="Integer"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="Top"
-			Visible=true
-			Group="Position"
-			InitialValue="0"
-			Type="Integer"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
 			Name="_mName"
 			Visible=false
 			Group="Behavior"
@@ -368,22 +397,6 @@ Inherits WebSDKUIControl
 			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="Enabled"
-			Visible=true
-			Group="Appearance"
-			InitialValue=""
-			Type="Boolean"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="Create"
-			Visible=false
-			Group="Behavior"
-			InitialValue=""
-			Type="Boolean"
-			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class
