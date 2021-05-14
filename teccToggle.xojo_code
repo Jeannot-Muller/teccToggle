@@ -4,8 +4,10 @@ Inherits WebSDKUIControl
 	#tag Event
 		Sub DrawControlInLayoutEditor(g as graphics)
 		  // Visual WebSDK controls can "draw" themselves in the IDE
-		  g.DrawingColor = &c000000
-		  g.DrawText "teccToggle", 0, g.Height/2
+		  g.DrawingColor = &c3D90F8
+		  g.FillRoundRectangle(0, 0, 66, 29, 18, 18)
+		  g.DrawingColor = &cFFFFFF
+		  g.FillOval(40,5,18,18)
 		  
 		  If BooleanProperty("enabled") = False Then
 		    g.Transparency = 60
@@ -26,9 +28,11 @@ Inherits WebSDKUIControl
 		      Try
 		        If parameters.value("target") = "INPUT" Then
 		          If Me.Enabled Then
-		            objectid = Parameters.value("ID")
-		            value = Parameters.value("value")
-		            if value = true then status = "on" else status = "off"
+		            mobjectid = Parameters.value("ID")
+		            mvalue = Parameters.value("value")
+		            If mvalue = True Then mstatus = "on" Else mstatus = "off"
+		            If mvalue = True Then mflag = 0 Else mflag = -1
+		            
 		            teccToggleClick()
 		            
 		            Return True
@@ -66,13 +70,15 @@ Inherits WebSDKUIControl
 	#tag Event
 		Sub Opening()
 		  Self.Style.value("outline") = "none"
-		  If InitialOff = True then
-		    value = False
+		  If InitialOff = True Then
+		    mvalue = False
 		  Else
-		    value = True
+		    mvalue = True
 		  End If
 		  
-		  If value = True Then status = "on" Else status = "off"
+		  If mvalue = True Then mstatus = "on" Else mstatus = "off"
+		  If mvalue = True Then mflag = 0 Else mflag = -1
+		  
 		  
 		  
 		End Sub
@@ -81,7 +87,7 @@ Inherits WebSDKUIControl
 	#tag Event
 		Sub Serialize(js as JSONItem)
 		  // Use this method to serialize the data your control needs for initial setup
-		  js.value("off") = initialOff
+		  js.value("off") = InitialOff
 		  js.value("coloron") = "#" + Design.ToString.right(6)
 		  
 		  
@@ -189,10 +195,23 @@ Inherits WebSDKUIControl
 		Event teccToggleClick()
 	#tag EndHook
 
+	#tag Hook, Flags = &h0
+		Event Untitled()
+	#tag EndHook
+
 
 	#tag Property, Flags = &h0, Description = 44657369676E
 		Design As color = &c3D90F8
 	#tag EndProperty
+
+	#tag ComputedProperty, Flags = &h0
+		#tag Getter
+			Get
+			  Return mflag
+			End Get
+		#tag EndGetter
+		flag As integer
+	#tag EndComputedProperty
 
 	#tag Property, Flags = &h0, Description = 496E697469616C204F4646
 		InitialOff As boolean
@@ -202,21 +221,52 @@ Inherits WebSDKUIControl
 		Private Shared JSFramework As WebFile
 	#tag EndProperty
 
-	#tag Property, Flags = &h0
-		objectid As string
+	#tag Property, Flags = &h21
+		Private mflag As integer
 	#tag EndProperty
 
-	#tag Property, Flags = &h0
-		status As string
+	#tag Property, Flags = &h21
+		Private mobjectid As string
 	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private mstatus As string
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private mvalue As boolean
+	#tag EndProperty
+
+	#tag ComputedProperty, Flags = &h0
+		#tag Getter
+			Get
+			  Return mobjectid
+			End Get
+		#tag EndGetter
+		objectid As string
+	#tag EndComputedProperty
+
+	#tag ComputedProperty, Flags = &h0
+		#tag Getter
+			Get
+			  Return mstatus
+			End Get
+		#tag EndGetter
+		status As string
+	#tag EndComputedProperty
 
 	#tag Property, Flags = &h21
 		Private Shared teccToggleCSS As WebFile
 	#tag EndProperty
 
-	#tag Property, Flags = &h21
-		Private value As boolean
-	#tag EndProperty
+	#tag ComputedProperty, Flags = &h0
+		#tag Getter
+			Get
+			  Return mvalue
+			End Get
+		#tag EndGetter
+		value As boolean
+	#tag EndComputedProperty
 
 
 	#tag Constant, Name = kJSCode, Type = String, Dynamic = False, Default = \"var tecc;\n(function (tecc) {\n    class teccToggle extends XojoWeb.XojoVisualControl {\n        constructor(id\x2C events) {\n            super(id\x2C events);\n        }\n        render() {\n            super.render();\n            let el \x3D this.DOMElement();\n            if (!el)\n                return;\n            this.setAttributes();\n            var idstr \x3D el.id + \"_teccToggle\"        \n            let btn \x3D document.createElement(\"div\");\n            var disabledStr \x3D \"\"\n            if (!this.enabled) { disabledStr \x3D \"disabled\x3D\'disabled\'\"}\n            var iOff \x3D \"\"\n            if (this.off\x3D\x3Dtrue) { iOff\x3D \"checked\x3D\'checked\'\"}\n            var cbid \x3D \"ts\" + idstr\n\t        btn.innerHTML \x3D \"<label class\x3D\'toggle\'><input id\x3D\'\" + cbid + \"\' + class\x3D\'teccCB\' \" + iOff + \" type\x3D\'checkbox\' \" + disabledStr + \"><span class\x3D\'roundbutton\' style\x3D\'background-color:\" + this.coloron +  \"\'></span></label>\";\n            btn.id \x3D idstr;\n            btn.addEventListener(\"click\"\x2C function(event) { \n\t\t\t    var controlObject \x3D XojoWeb.getNamedControl( el.id );\n\t\t\t    var jsonObj \x3D new XojoWeb.JSONItem(); \n\t\t\t    jsonObj.set(\'ID\'\x2Cel.id); \n\t\t\t    jsonObj.set(\'target\'\x2Cevent.target.tagName); \n                var c \x3D document.getElementById(cbid).checked\n                jsonObj.set(\'value\'\x2C !c);\n\t\t\t    controlObject.triggerServerEvent(\'teccToggleClick\'\x2C jsonObj)\x2C true\n\t\t        });\n            this.replaceEveryChild( btn );\n            this.applyTooltip(el);\n            this.applyUserStyle();\n        }\n        updateControl(data) {\n            super.updateControl(data);\n            let js \x3D $.parseJSON(data);\n            this.refresh();\n            this.off \x3D js.off;\n \t    this.coloron \x3D js.coloron;\n        }\n    }\n    tecc.teccToggle\x3D teccToggle;\n})(tecc || (tecc \x3D {}));", Scope = Private
@@ -337,22 +387,6 @@ Inherits WebSDKUIControl
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="objectid"
-			Visible=false
-			Group="Behavior"
-			InitialValue=""
-			Type="string"
-			EditorType="MultiLineEditor"
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="status"
-			Visible=false
-			Group="Behavior"
-			InitialValue=""
-			Type="string"
-			EditorType="MultiLineEditor"
-		#tag EndViewProperty
-		#tag ViewProperty
 			Name="TabIndex"
 			Visible=true
 			Group="Visual Controls"
@@ -426,6 +460,38 @@ Inherits WebSDKUIControl
 			Group="Behavior"
 			InitialValue=""
 			Type="String"
+			EditorType="MultiLineEditor"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="value"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="boolean"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="objectid"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="string"
+			EditorType="MultiLineEditor"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="flag"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="integer"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="status"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="string"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 	#tag EndViewBehavior
