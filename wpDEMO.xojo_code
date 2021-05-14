@@ -49,7 +49,6 @@ Begin WebPage wpDEMO
       LockVertical    =   False
       Scope           =   0
       TabIndex        =   27
-      TabStop         =   True
       Tooltip         =   ""
       Top             =   20
       Visible         =   True
@@ -78,6 +77,7 @@ Begin WebPage wpDEMO
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   28
+         TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
          Top             =   30
@@ -86,66 +86,15 @@ Begin WebPage wpDEMO
          _mDesignHeight  =   0
          _mDesignWidth   =   0
          _mPanelIndex    =   -1
-         Begin teccToggle teccToggle3
-            ControlID       =   ""
-            Design          =   &c3D90F800
-            Enabled         =   True
-            Height          =   34
-            Index           =   -2147483648
-            Indicator       =   0
-            InitialOff      =   True
-            Left            =   612
-            LockBottom      =   False
-            LockedInPosition=   False
-            LockHorizontal  =   False
-            LockLeft        =   True
-            LockRight       =   False
-            LockTop         =   True
-            LockVertical    =   False
-            objectid        =   ""
-            Scope           =   0
-            status          =   ""
-            TabIndex        =   0
-            Tooltip         =   ""
-            Top             =   41
-            Visible         =   True
-            Width           =   66
-            _mPanelIndex    =   -1
-         End
-         Begin teccToggle teccToggle2
-            ControlID       =   ""
-            Design          =   &c008F5100
-            Enabled         =   True
-            Height          =   34
-            Index           =   -2147483648
-            Indicator       =   0
-            InitialOff      =   True
-            Left            =   446
-            LockBottom      =   False
-            LockedInPosition=   False
-            LockHorizontal  =   False
-            LockLeft        =   True
-            LockRight       =   False
-            LockTop         =   True
-            LockVertical    =   False
-            objectid        =   ""
-            Scope           =   0
-            status          =   ""
-            TabIndex        =   1
-            Tooltip         =   ""
-            Top             =   41
-            Visible         =   True
-            Width           =   66
-            _mPanelIndex    =   -1
-         End
          Begin teccToggle teccToggle1
             ControlID       =   ""
             Design          =   &cFF930000
             Enabled         =   True
+            flag            =   0
             Height          =   34
             Index           =   -2147483648
             Indicator       =   0
-            InitialOff      =   False
+            InitiallyOff    =   False
             Left            =   249
             LockBottom      =   False
             LockedInPosition=   False
@@ -154,12 +103,15 @@ Begin WebPage wpDEMO
             LockRight       =   False
             LockTop         =   True
             LockVertical    =   False
+            Mirror          =   True
             objectid        =   ""
+            Parent          =   "Rectangle2"
             Scope           =   0
             status          =   ""
-            TabIndex        =   2
+            TabIndex        =   0
             Tooltip         =   ""
-            Top             =   41
+            Top             =   39
+            value           =   False
             Visible         =   True
             Width           =   66
             _mPanelIndex    =   -1
@@ -184,10 +136,11 @@ Begin WebPage wpDEMO
          LockTop         =   True
          LockVertical    =   False
          Multiline       =   False
-         PanelIndex      =   0
+         PanelIndex      =   "0"
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   29
+         TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "me.flag"
          TextAlignment   =   0
@@ -218,10 +171,11 @@ Begin WebPage wpDEMO
          LockTop         =   True
          LockVertical    =   False
          Multiline       =   False
-         PanelIndex      =   0
+         PanelIndex      =   "0"
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   30
+         TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "-"
          TextAlignment   =   0
@@ -252,10 +206,11 @@ Begin WebPage wpDEMO
          LockTop         =   True
          LockVertical    =   False
          Multiline       =   False
-         PanelIndex      =   0
+         PanelIndex      =   "0"
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   31
+         TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "-"
          TextAlignment   =   0
@@ -286,10 +241,11 @@ Begin WebPage wpDEMO
          LockTop         =   True
          LockVertical    =   False
          Multiline       =   False
-         PanelIndex      =   0
+         PanelIndex      =   "0"
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   32
+         TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "-"
          TextAlignment   =   0
@@ -320,10 +276,11 @@ Begin WebPage wpDEMO
          LockTop         =   True
          LockVertical    =   False
          Multiline       =   False
-         PanelIndex      =   0
+         PanelIndex      =   "0"
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   33
+         TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "me.value"
          TextAlignment   =   0
@@ -354,10 +311,11 @@ Begin WebPage wpDEMO
          LockTop         =   True
          LockVertical    =   False
          Multiline       =   False
-         PanelIndex      =   0
+         PanelIndex      =   "0"
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   34
+         TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "-"
          TextAlignment   =   0
@@ -388,10 +346,11 @@ Begin WebPage wpDEMO
          LockTop         =   True
          LockVertical    =   False
          Multiline       =   False
-         PanelIndex      =   0
+         PanelIndex      =   "0"
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   35
+         TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "-"
          TextAlignment   =   0
@@ -422,10 +381,11 @@ Begin WebPage wpDEMO
          LockTop         =   True
          LockVertical    =   False
          Multiline       =   False
-         PanelIndex      =   0
+         PanelIndex      =   "0"
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   36
+         TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "-"
          TextAlignment   =   0
@@ -456,10 +416,11 @@ Begin WebPage wpDEMO
          LockTop         =   True
          LockVertical    =   False
          Multiline       =   False
-         PanelIndex      =   0
+         PanelIndex      =   "0"
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   37
+         TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "me.status"
          TextAlignment   =   0
@@ -490,10 +451,11 @@ Begin WebPage wpDEMO
          LockTop         =   True
          LockVertical    =   False
          Multiline       =   False
-         PanelIndex      =   0
+         PanelIndex      =   "0"
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   38
+         TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "DOM"
          TextAlignment   =   0
@@ -527,6 +489,8 @@ Begin WebPage wpDEMO
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   39
+         TabPanelIndex   =   0
+         TabStop         =   True
          Text            =   "-"
          TextAlignment   =   0
          TextColor       =   &c00000000
@@ -559,6 +523,8 @@ Begin WebPage wpDEMO
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   40
+         TabPanelIndex   =   0
+         TabStop         =   True
          Text            =   "-"
          TextAlignment   =   0
          TextColor       =   &c00000000
@@ -591,6 +557,8 @@ Begin WebPage wpDEMO
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   41
+         TabPanelIndex   =   0
+         TabStop         =   True
          Text            =   "-"
          TextAlignment   =   0
          TextColor       =   &c00000000
@@ -623,6 +591,8 @@ Begin WebPage wpDEMO
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   42
+         TabPanelIndex   =   0
+         TabStop         =   True
          Text            =   "-"
          TextAlignment   =   0
          TextColor       =   &cA9A9A900
@@ -655,6 +625,8 @@ Begin WebPage wpDEMO
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   43
+         TabPanelIndex   =   0
+         TabStop         =   True
          Text            =   "-"
          TextAlignment   =   0
          TextColor       =   &cA9A9A900
@@ -687,6 +659,8 @@ Begin WebPage wpDEMO
          Parent          =   "Rectangle1"
          Scope           =   0
          TabIndex        =   44
+         TabPanelIndex   =   0
+         TabStop         =   True
          Text            =   "-"
          TextAlignment   =   0
          TextColor       =   &cC0C0C000
@@ -697,6 +671,64 @@ Begin WebPage wpDEMO
          Width           =   100
          _mPanelIndex    =   -1
       End
+   End
+   Begin teccToggle teccToggle3
+      ControlID       =   ""
+      Design          =   &c3D90F800
+      Enabled         =   True
+      flag            =   0
+      Height          =   34
+      Index           =   -2147483648
+      Indicator       =   0
+      InitiallyOff    =   False
+      Left            =   612
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Mirror          =   False
+      objectid        =   ""
+      Scope           =   0
+      status          =   ""
+      TabIndex        =   0
+      Tooltip         =   ""
+      Top             =   41
+      value           =   False
+      Visible         =   True
+      Width           =   66
+      _mPanelIndex    =   -1
+   End
+   Begin teccToggle teccToggle2
+      ControlID       =   ""
+      Design          =   &c008F5100
+      Enabled         =   True
+      flag            =   0
+      Height          =   34
+      Index           =   -2147483648
+      Indicator       =   0
+      InitiallyOff    =   True
+      Left            =   446
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Mirror          =   False
+      objectid        =   ""
+      Scope           =   0
+      status          =   ""
+      TabIndex        =   1
+      Tooltip         =   ""
+      Top             =   41
+      value           =   False
+      Visible         =   True
+      Width           =   66
+      _mPanelIndex    =   -1
    End
 End
 #tag EndWebPage
@@ -723,6 +755,17 @@ End
 
 #tag EndWindowCode
 
+#tag Events teccToggle1
+	#tag Event , Description = 4669726573207768656E2074686520636F6E74726F6C20697320636C69636B65642E2052657475726E7320746865206368616E676564207374617475732E0A737461747573203D2074686520737461747573206F662074686520636F6E74726F6C2E0A6F626A6563746964203D20746865206964206F6620746865206372656174656420444F4D20656C656D656E742E
+		Sub teccToggleClick()
+		  lblDOM1.Text = Me.objectid
+		  lblStatus1.Text = Me.status
+		  lblValue1.Text = Me.value.ToString
+		  lblFlag1.Text = Me.flag.ToString
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events teccToggle3
 	#tag Event , Description = 4669726573207768656E2074686520636F6E74726F6C20697320636C69636B65642E2052657475726E7320746865206368616E676564207374617475732E0A737461747573203D2074686520737461747573206F662074686520636F6E74726F6C2E0A6F626A6563746964203D20746865206964206F6620746865206372656174656420444F4D20656C656D656E742E
 		Sub teccToggleClick()
@@ -742,17 +785,6 @@ End
 		  lblStatus2.Text = Me.status
 		  lblValue2.Text = Me.value.ToString
 		  lblFlag2.Text = Me.flag.ToString
-		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events teccToggle1
-	#tag Event , Description = 4669726573207768656E2074686520636F6E74726F6C20697320636C69636B65642E2052657475726E7320746865206368616E676564207374617475732E0A737461747573203D2074686520737461747573206F662074686520636F6E74726F6C2E0A6F626A6563746964203D20746865206964206F6620746865206372656174656420444F4D20656C656D656E742E
-		Sub teccToggleClick()
-		  lblDOM1.Text = Me.objectid
-		  lblStatus1.Text = Me.status
-		  lblValue1.Text = Me.value.ToString
-		  lblFlag1.Text = Me.flag.ToString
 		  
 		End Sub
 	#tag EndEvent
