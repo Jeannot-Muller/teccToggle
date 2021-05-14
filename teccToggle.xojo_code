@@ -52,10 +52,11 @@ Inherits WebSDKUIControl
 
 	#tag Event
 		Function HandleRequest(Request As WebRequest, Response As WebResponse) As Boolean
+		  #Pragma unused Request
+		  #Pragma unused Response
 		  // Requests sent to the session with the following pattern
 		  // 
 		  // /<Session Identifier>/sdk/<controlID>/request_path
-		  break
 		  
 		End Function
 	#tag EndEvent
@@ -98,62 +99,63 @@ Inherits WebSDKUIControl
 
 	#tag Event
 		Function SessionCSSURLs(session as WebSession) As String()
+		  #Pragma unused Session
 		  // Return an array of CSS URLs for your control
 		  // Here's one way to do this...
 		  
-		  Var cssStr As String
-		  Var css() As String
-		  
-		  css.Add(".toggle {")
-		  css.Add("margin:0 0 0 2rem;")
-		  css.Add("position: relative;")
-		  css.Add("display: inline-block;")
-		  css.Add("width: 4rem;")
-		  css.Add("height: 1.7rem;")
-		  css.Add("}")
-		  
-		  css.Add(".toggle Input {")
-		  css.Add("display: none;")
-		  css.Add("}")
-		  
-		  css.Add(".roundbutton {")
-		  css.Add("position: absolute;")
-		  css.Add("top: 0;")
-		  css.Add("Left: -33px;")
-		  css.Add("bottom: 0;")
-		  css.Add("Right: 0;")
-		  css.Add("width: 100%;")
-		  css.Add("background-Color: #33455e;")
-		  css.Add("display: block;")
-		  css.Add("transition: all 0.3s;")
-		  css.Add("border-radius: 1.7rem;")
-		  css.Add("cursor: pointer;")
-		  css.Add("}")
-		  
-		  css.Add(".roundbutton:before {")
-		  css.Add("position: absolute;")
-		  css.Add("content: '';")
-		  css.Add("height: 1.1rem;")
-		  css.Add("width: 1.2rem;")
-		  css.Add("border-radius: 100%;")
-		  css.Add("display: block;")
-		  css.Add("Left: 0.5rem;")
-		  css.Add("bottom: 0.31rem;")
-		  css.Add("background-Color: white;")
-		  css.Add("transition: all 0.3s;")
-		  css.Add("}")
-		  
-		  css.Add("Input:checked + .roundbutton {")
-		  css.Add("background-Color: #929292 !important;")
-		  css.Add("}")
-		  
-		  css.Add("Input:checked + .roundbutton:before  {")
-		  css.Add("transform: translate(1.9Rem, 0);")
-		  css.Add("}")
-		  
-		  cssStr = Join(css, "" )
-		  
 		  If teccToggleCSS = Nil Then
+		    Var cssStr As String
+		    Var css() As String
+		    
+		    css.Add(".toggle {")
+		    css.Add("margin:0 0 0 2rem;")
+		    css.Add("position: relative;")
+		    css.Add("display: inline-block;")
+		    css.Add("width: 4rem;")
+		    css.Add("height: 1.7rem;")
+		    css.Add("}")
+		    
+		    css.Add(".toggle Input {")
+		    css.Add("display: none;")
+		    css.Add("}")
+		    
+		    css.Add(".roundbutton {")
+		    css.Add("position: absolute;")
+		    css.Add("top: 0;")
+		    css.Add("Left: -33px;")
+		    css.Add("bottom: 0;")
+		    css.Add("Right: 0;")
+		    css.Add("width: 100%;")
+		    css.Add("background-Color: #33455e;")
+		    css.Add("display: block;")
+		    css.Add("transition: all 0.3s;")
+		    css.Add("border-radius: 1.7rem;")
+		    css.Add("cursor: pointer;")
+		    css.Add("}")
+		    
+		    css.Add(".roundbutton:before {")
+		    css.Add("position: absolute;")
+		    css.Add("content: '';")
+		    css.Add("height: 1.1rem;")
+		    css.Add("width: 1.2rem;")
+		    css.Add("border-radius: 100%;")
+		    css.Add("display: block;")
+		    css.Add("Left: 0.5rem;")
+		    css.Add("bottom: 0.31rem;")
+		    css.Add("background-Color: white;")
+		    css.Add("transition: all 0.3s;")
+		    css.Add("}")
+		    
+		    css.Add("Input:checked + .roundbutton {")
+		    css.Add("background-Color: #929292 !important;")
+		    css.Add("}")
+		    
+		    css.Add("Input:checked + .roundbutton:before  {")
+		    css.Add("transform: translate(1.9Rem, 0);")
+		    css.Add("}")
+		    
+		    cssStr = String.FromArray( css, "" )
+		    
 		    teccToggleCSS = New WebFile
 		    teccToggleCSS.Filename = "teccToggle.css"
 		    teccToggleCSS.MIMEType = "text/css"
@@ -162,7 +164,7 @@ Inherits WebSDKUIControl
 		  End If
 		  
 		  Var urls() As String
-		  urls.Append teccToggleCSS.URL
+		  urls.Add( teccToggleCSS.URL )
 		  
 		  Return urls
 		End Function
@@ -170,12 +172,14 @@ Inherits WebSDKUIControl
 
 	#tag Event
 		Function SessionHead(session as WebSession) As String
+		  #Pragma unused session
 		  // Return anything that you needed added to the <head> of the web app
 		End Function
 	#tag EndEvent
 
 	#tag Event
 		Function SessionJavascriptURLs(session as WebSession) As String()
+		  #Pragma unused session
 		  If JSFramework = Nil Then
 		    JSFramework = New WebFile
 		    JSFramework.Filename = "teccToggle.js"
@@ -185,8 +189,7 @@ Inherits WebSDKUIControl
 		  End If
 		  
 		  Dim urls() As String
-		  urls.Append JSFramework.URL
-		  'Call DoEnabled()
+		  urls.Add( JSFramework.URL )
 		  
 		  Return urls
 		End Function
@@ -272,6 +275,12 @@ Inherits WebSDKUIControl
 
 
 	#tag Constant, Name = kJSCode, Type = String, Dynamic = False, Default = \"var tecc;\n(function (tecc) {\n    class teccToggle extends XojoWeb.XojoVisualControl {\n        constructor(id\x2C events) {\n            super(id\x2C events);\n        }\n        render() {\n            super.render();\n            let el \x3D this.DOMElement();\n            if (!el)\n                return;\n            this.setAttributes();\n            var idstr \x3D el.id + \"_teccToggle\" ;      \n            let btn \x3D document.createElement(\"div\");\n            var disabledStr \x3D \"\";\n            if (!this.enabled) { disabledStr \x3D \"disabled\x3D\'disabled\'\"};\n            var iOff \x3D \"\";\n            if (this.off\x3D\x3Dtrue) { iOff\x3D \"checked\x3D\'checked\'\"};\n            var cbid \x3D \"ts\" + idstr;\n            var mirror \x3D \"; transform: rotate(360deg) scaleX(-1);\'\";\n            if (this.mirror\x3D\x3Dtrue) { mirror \x3D \"\" };\n\t        btn.innerHTML \x3D \"<label class\x3D\'toggle\'\" +mirror + \"><input id\x3D\'\" + cbid + \"\' + class\x3D\'teccCB\' \" + iOff + \" type\x3D\'checkbox\' \" + disabledStr + \"><span class\x3D\'roundbutton\' style\x3D\'background-color: \" + this.coloron +  mirror + \"\'></span></label>\";\n            btn.id \x3D idstr;\n            btn.addEventListener(\"click\"\x2C function(event) { \n\t\t\t    var controlObject \x3D XojoWeb.getNamedControl( el.id );\n\t\t\t    var jsonObj \x3D new XojoWeb.JSONItem(); \n\t\t\t    jsonObj.set(\'ID\'\x2Cel.id); \n\t\t\t    jsonObj.set(\'target\'\x2Cevent.target.tagName); \n                var c \x3D document.getElementById(cbid).checked\n                jsonObj.set(\'value\'\x2C !c);\n\t\t\t    controlObject.triggerServerEvent(\'teccToggleClick\'\x2C jsonObj)\x2C true\n\t\t        });\n            this.replaceEveryChild( btn );\n            this.applyTooltip(el);\n            this.applyUserStyle();\n        }\n        updateControl(data) {\n            super.updateControl(data);\n            let js \x3D $.parseJSON(data);\n            this.refresh();\n            this.off \x3D js.off;\n            this.mirror \x3D js.mirror;\n \t    this.coloron \x3D js.coloron;\n        }\n    }\n    tecc.teccToggle\x3D teccToggle;\n})(tecc || (tecc \x3D {}));", Scope = Private
+	#tag EndConstant
+
+	#tag Constant, Name = LibraryIcon, Type = String, Dynamic = False, Default = \"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", Scope = Public
+	#tag EndConstant
+
+	#tag Constant, Name = NavigatorIcon, Type = String, Dynamic = False, Default = \"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", Scope = Public
 	#tag EndConstant
 
 
