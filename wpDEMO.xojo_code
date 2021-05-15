@@ -126,11 +126,11 @@ Begin WebPage wpDEMO
       _mPanelIndex    =   -1
    End
    Begin teccToggle teccToggle3
-      ActiveColor     =   &cFF260000
+      ActiveColor     =   &cFF930000
       ControlID       =   ""
-      CrownColor      =   &cC0C0C000
+      CrownColor      =   &cFF260000
       CrownPosition   =   2
-      DeactiveColor   =   &c92929200
+      DeactiveColor   =   &c00000000
       Enabled         =   True
       flag            =   0
       Height          =   68
@@ -156,11 +156,11 @@ Begin WebPage wpDEMO
       _mPanelIndex    =   -1
    End
    Begin teccToggle teccToggle1
-      ActiveColor     =   &c3D90F800
+      ActiveColor     =   &cD4FB7800
       ControlID       =   ""
       CrownColor      =   &cFEFFFF00
       CrownPosition   =   0
-      DeactiveColor   =   &cD4FB7800
+      DeactiveColor   =   &c008F5100
       Enabled         =   True
       flag            =   0
       Height          =   68
@@ -188,9 +188,9 @@ Begin WebPage wpDEMO
    Begin teccToggle teccToggle2
       ActiveColor     =   &c3D90F800
       ControlID       =   ""
-      CrownColor      =   &c01189200
+      CrownColor      =   &cD5D5D500
       CrownPosition   =   1
-      DeactiveColor   =   &c92929200
+      DeactiveColor   =   &c01189200
       Enabled         =   True
       flag            =   0
       Height          =   68
@@ -964,8 +964,8 @@ Begin WebPage wpDEMO
       ControlID       =   ""
       CrownColor      =   &cD5D5D500
       CrownPosition   =   3
-      DeactiveColor   =   &c92929200
-      Enabled         =   True
+      DeactiveColor   =   &c01189200
+      Enabled         =   False
       flag            =   0
       Height          =   68
       Index           =   -2147483648
@@ -1235,7 +1235,7 @@ Begin WebPage wpDEMO
       Enabled         =   True
       FontName        =   ""
       FontSize        =   0.0
-      Height          =   108
+      Height          =   137
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   True
@@ -1251,7 +1251,7 @@ Begin WebPage wpDEMO
       Scope           =   0
       TabIndex        =   80
       TabPanelIndex   =   0
-      Text            =   "0: Right\n1: Left\n2: Up\n3: Down"
+      Text            =   "0: Right\n1: Left\n2: Top\n3: Bottom\nØ: Deactivate"
       TextAlignment   =   0
       TextColor       =   &cC0C0C000
       Tooltip         =   ""
