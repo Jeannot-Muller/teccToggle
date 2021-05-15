@@ -5,44 +5,50 @@ Inherits WebSDKUIControl
 		Sub DrawControlInLayoutEditor(g as graphics)
 		  // Visual WebSDK controls can "draw" themselves in the IDE
 		  
-		  // todo
-		  
-		  Select Case IntegerProperty("CrownPosition")
-		  Case 0
-		    Var activeColor As Color = ColorProperty( "ActiveColor" ) 
-		    g.DrawingColor = activeColor
-		    g.FillRoundRectangle(0, 0, 66, 29, 18, 18)
-		    Var crownColor As Color = ColorProperty( "CrownColor" ) 
-		    g.DrawingColor = crownColor
-		    g.FillOval(40,5,18,18)
-		  Case 1
-		    Var activeColor As Color = ColorProperty( "ActiveColor" ) 
-		    g.DrawingColor = activeColor
-		    g.FillRoundRectangle(0, 0, 66, 29, 18, 18)
-		    Var crownColor As Color = ColorProperty( "CrownColor" ) 
-		    g.DrawingColor = crownColor
-		    g.FillOval(10,5,18,18)
-		  Case 2
-		    Var activeColor As Color = ColorProperty( "ActiveColor" ) 
-		    g.DrawingColor = activeColor
-		    g.FillRoundRectangle(0, 0, 29, 66, 18, 18)
-		    Var crownColor As Color = ColorProperty( "CrownColor" ) 
-		    g.DrawingColor = crownColor
-		    g.FillOval(5,8,18,18)
-		  Case 3
-		    Var activeColor As Color = ColorProperty( "ActiveColor" ) 
-		    g.DrawingColor = activeColor
-		    g.FillRoundRectangle(0, 0, 29, 66, 18, 18)
-		    Var crownColor As Color = ColorProperty( "CrownColor" ) 
-		    g.DrawingColor = crownColor
-		    g.FillOval(5,40,18,18)
-		  End Select
+		  // todo4
+		  g.FontName = "Helvetica"
+		  g.FontUnit = FontUnits.Point
+		  g.FontSize = 21
 		  
 		  If BooleanProperty("enabled") = False Then
 		    g.Transparency = 60
 		  Else
 		    g.Transparency = 0
 		  End If
+		  
+		  If BooleanProperty("visible") = True Then
+		    Select Case IntegerProperty("CrownPosition")
+		    Case 0
+		      g.DrawingColor = ColorProperty( "ActiveColor" ) 
+		      g.FillRoundRectangle(0, 0, 66, 29, 18, 18)
+		      g.DrawingColor = ColorProperty( "CrownColor" ) 
+		      g.FillOval(40,5,18,18)
+		      g.DrawingColor = ColorProperty( "DeactiveColor" ) 
+		      g.DrawText( chr(216), 7, 22 )
+		    Case 1
+		      g.DrawingColor = ColorProperty( "ActiveColor" ) 
+		      g.FillRoundRectangle(0, 0, 66, 29, 18, 18)
+		      g.DrawingColor = ColorProperty( "CrownColor" ) 
+		      g.FillOval(10,5,18,18)
+		      g.DrawingColor = ColorProperty( "DeactiveColor" ) 
+		      g.DrawText( Chr(216), 43, 22 )
+		    Case 2
+		      g.DrawingColor = ColorProperty( "ActiveColor" ) 
+		      g.FillRoundRectangle(0, 0, 29, 66, 18, 18)
+		      g.DrawingColor = ColorProperty( "CrownColor" ) 
+		      g.FillOval(5,8,18,18)
+		      g.DrawingColor = ColorProperty( "DeactiveColor" ) 
+		      g.DrawText( chr(216), 7, 60 )
+		    Case 3
+		      g.DrawingColor = ColorProperty( "ActiveColor" ) 
+		      g.FillRoundRectangle(0, 0, 29, 66, 18, 18)
+		      g.DrawingColor = ColorProperty( "CrownColor" ) 
+		      g.FillOval(5,40,18,18)
+		      g.DrawingColor = ColorProperty( "DeactiveColor" ) 
+		      g.DrawText( chr(216), 6, 22 )
+		    End Select
+		  end if
+		  
 		End Sub
 	#tag EndEvent
 
@@ -129,9 +135,9 @@ Inherits WebSDKUIControl
 		    cposition = "360"
 		  Case cpositions.Left
 		    cposition = "180"
-		  Case cpositions.Up
+		  Case cpositions.top
 		    cposition = "270"
-		  Case cpositions.Down
+		  Case cpositions.Bottom
 		    cposition = "90"
 		    
 		  End Select
@@ -368,8 +374,8 @@ Inherits WebSDKUIControl
 	#tag Enum, Name = cpositions, Type = Integer, Flags = &h0
 		Right
 		  Left
-		  Up
-		Down
+		  Top
+		Bottom
 	#tag EndEnum
 
 
@@ -544,8 +550,8 @@ Inherits WebSDKUIControl
 			#tag EnumValues
 				"0 - Right"
 				"1 - Left"
-				"2 - Up"
-				"3 - Down"
+				"2 - Top"
+				"3 - Bottom"
 			#tag EndEnumValues
 		#tag EndViewProperty
 		#tag ViewProperty
