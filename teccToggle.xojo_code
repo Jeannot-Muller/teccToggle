@@ -4,15 +4,37 @@ Inherits WebSDKUIControl
 	#tag Event
 		Sub DrawControlInLayoutEditor(g as graphics)
 		  // Visual WebSDK controls can "draw" themselves in the IDE
-		  Var activeColor As Color = ColorProperty( "ActiveColor" ) 
-		  g.DrawingColor = activeColor
-		  g.FillRoundRectangle(0, 0, 66, 29, 18, 18)
 		  
-		  Var crownColor As Color = ColorProperty( "CrownColor" ) 
-		  g.DrawingColor = crownColor
-		  // Positioning
-		  // einfügen Unterscheide
-		  g.FillOval(40,5,18,18)
+		  Select Case IntegerProperty("CrownPosition")
+		  Case 0
+		    Var activeColor As Color = ColorProperty( "ActiveColor" ) 
+		    g.DrawingColor = activeColor
+		    g.FillRoundRectangle(0, 0, 66, 29, 18, 18)
+		    Var crownColor As Color = ColorProperty( "CrownColor" ) 
+		    g.DrawingColor = crownColor
+		    g.FillOval(40,5,18,18)
+		  Case 1
+		    Var activeColor As Color = ColorProperty( "ActiveColor" ) 
+		    g.DrawingColor = activeColor
+		    g.FillRoundRectangle(0, 0, 66, 29, 18, 18)
+		    Var crownColor As Color = ColorProperty( "CrownColor" ) 
+		    g.DrawingColor = crownColor
+		    g.FillOval(10,5,18,18)
+		  Case 2
+		    Var activeColor As Color = ColorProperty( "ActiveColor" ) 
+		    g.DrawingColor = activeColor
+		    g.FillRoundRectangle(0, 0, 29, 66, 18, 18)
+		    Var crownColor As Color = ColorProperty( "CrownColor" ) 
+		    g.DrawingColor = crownColor
+		    g.FillOval(5,8,18,18)
+		  Case 3
+		    Var activeColor As Color = ColorProperty( "ActiveColor" ) 
+		    g.DrawingColor = activeColor
+		    g.FillRoundRectangle(0, 0, 29, 66, 18, 18)
+		    Var crownColor As Color = ColorProperty( "CrownColor" ) 
+		    g.DrawingColor = crownColor
+		    g.FillOval(5,40,18,18)
+		  End Select
 		  
 		  If BooleanProperty("enabled") = False Then
 		    g.Transparency = 60

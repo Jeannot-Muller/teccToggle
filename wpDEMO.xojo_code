@@ -133,7 +133,7 @@ Begin WebPage wpDEMO
       DeactiveColor   =   &c92929200
       Enabled         =   True
       flag            =   0
-      Height          =   34
+      Height          =   68
       Index           =   -2147483648
       Indicator       =   0
       InitiallyOff    =   False
@@ -149,10 +149,10 @@ Begin WebPage wpDEMO
       status          =   ""
       TabIndex        =   34
       Tooltip         =   ""
-      Top             =   113
+      Top             =   94
       value           =   False
       Visible         =   True
-      Width           =   66
+      Width           =   68
       _mPanelIndex    =   -1
    End
    Begin teccToggle teccToggle1
@@ -163,10 +163,10 @@ Begin WebPage wpDEMO
       DeactiveColor   =   &cD4FB7800
       Enabled         =   True
       flag            =   0
-      Height          =   34
+      Height          =   68
       Index           =   -2147483648
       Indicator       =   0
-      InitiallyOff    =   False
+      InitiallyOff    =   True
       Left            =   232
       LockBottom      =   False
       LockedInPosition=   False
@@ -179,10 +179,10 @@ Begin WebPage wpDEMO
       status          =   ""
       TabIndex        =   35
       Tooltip         =   "0=Right"
-      Top             =   113
+      Top             =   94
       value           =   False
-      Visible         =   True
-      Width           =   66
+      Visible         =   False
+      Width           =   68
       _mPanelIndex    =   -1
    End
    Begin teccToggle teccToggle2
@@ -193,11 +193,11 @@ Begin WebPage wpDEMO
       DeactiveColor   =   &c92929200
       Enabled         =   True
       flag            =   0
-      Height          =   34
+      Height          =   68
       Index           =   -2147483648
       Indicator       =   0
       InitiallyOff    =   False
-      Left            =   429
+      Left            =   428
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -209,10 +209,10 @@ Begin WebPage wpDEMO
       status          =   ""
       TabIndex        =   36
       Tooltip         =   ""
-      Top             =   113
+      Top             =   94
       value           =   False
       Visible         =   True
-      Width           =   66
+      Width           =   68
       _mPanelIndex    =   -1
    End
    Begin WebLabel lblValue2
@@ -965,9 +965,9 @@ Begin WebPage wpDEMO
       CrownColor      =   &cD5D5D500
       CrownPosition   =   3
       DeactiveColor   =   &c92929200
-      Enabled         =   False
+      Enabled         =   True
       flag            =   0
-      Height          =   34
+      Height          =   68
       Index           =   -2147483648
       Indicator       =   0
       InitiallyOff    =   False
@@ -983,10 +983,10 @@ Begin WebPage wpDEMO
       status          =   ""
       TabIndex        =   71
       Tooltip         =   ""
-      Top             =   113
+      Top             =   94
       value           =   False
       Visible         =   True
-      Width           =   66
+      Width           =   68
       _mPanelIndex    =   -1
    End
    Begin WebButton pbEnable4
