@@ -5,7 +5,7 @@ Inherits WebSDKUIControl
 		Sub DrawControlInLayoutEditor(g as graphics)
 		  // Visual WebSDK controls can "draw" themselves in the IDE
 		  
-		  // todo4
+		  // todo
 		  
 		  Select Case IntegerProperty("CrownPosition")
 		  Case 0
