@@ -8,7 +8,7 @@ Inherits WebSDKUIControl
 		  // add crown color
 		  // check performance
 		  
-		  // analyse code
+		  
 		  
 		  Select Case IntegerProperty("CrownPosition")
 		  Case 0
