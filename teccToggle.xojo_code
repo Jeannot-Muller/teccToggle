@@ -6,6 +6,7 @@ Inherits WebSDKUIControl
 		  // Visual WebSDK controls can "draw" themselves in the IDE
 		  
 		  // add crown color
+		  // check performance
 		  
 		  Select Case IntegerProperty("CrownPosition")
 		  Case 0
