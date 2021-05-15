@@ -4,7 +4,7 @@ Begin WebPage wpDEMO
    Compatibility   =   ""
    ControlID       =   ""
    Enabled         =   False
-   Height          =   706
+   Height          =   733
    ImplicitInstance=   True
    Index           =   -2147483648
    Indicator       =   0
@@ -24,12 +24,12 @@ Begin WebPage wpDEMO
    Title           =   "teccToggle (DEMO)"
    Top             =   0
    Visible         =   True
-   Width           =   730
+   Width           =   1068
    _ImplicitInstance=   False
    _mDesignHeight  =   0
    _mDesignWidth   =   0
    _mPanelIndex    =   -1
-   Begin WebLabel lblMirror3
+   Begin WebLabel lblPosition3
       Bold            =   False
       ControlID       =   ""
       Enabled         =   False
@@ -39,7 +39,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   595
+      Left            =   630
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -55,7 +55,7 @@ Begin WebPage wpDEMO
       TextAlignment   =   0
       TextColor       =   &cC0C0C000
       Tooltip         =   ""
-      Top             =   340
+      Top             =   257
       Underline       =   False
       Visible         =   True
       Width           =   100
@@ -71,7 +71,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   595
+      Left            =   630
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -87,39 +87,7 @@ Begin WebPage wpDEMO
       TextAlignment   =   0
       TextColor       =   &cC0C0C000
       Tooltip         =   ""
-      Top             =   294
-      Underline       =   False
-      Visible         =   True
-      Width           =   100
-      _mPanelIndex    =   -1
-   End
-   Begin WebLabel lblFlag3
-      Bold            =   False
-      ControlID       =   ""
-      Enabled         =   False
-      FontName        =   ""
-      FontSize        =   0.0
-      Height          =   38
-      Index           =   -2147483648
-      Indicator       =   0
-      Italic          =   False
-      Left            =   595
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      Multiline       =   False
-      Scope           =   0
-      TabIndex        =   30
-      TabPanelIndex   =   0
-      Text            =   "-"
-      TextAlignment   =   0
-      TextColor       =   &c00000000
-      Tooltip         =   ""
-      Top             =   221
+      Top             =   211
       Underline       =   False
       Visible         =   True
       Width           =   100
@@ -135,7 +103,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   595
+      Left            =   630
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -151,54 +119,25 @@ Begin WebPage wpDEMO
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   175
-      Underline       =   False
-      Visible         =   True
-      Width           =   100
-      _mPanelIndex    =   -1
-   End
-   Begin WebLabel lblStatus3
-      Bold            =   False
-      ControlID       =   ""
-      Enabled         =   False
-      FontName        =   ""
-      FontSize        =   0.0
-      Height          =   38
-      Index           =   -2147483648
-      Indicator       =   0
-      Italic          =   False
-      Left            =   595
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      Multiline       =   False
-      Scope           =   0
-      TabIndex        =   32
-      TabPanelIndex   =   0
-      Text            =   "-"
-      TextAlignment   =   0
-      TextColor       =   &c00000000
-      Tooltip         =   ""
-      Top             =   129
+      Top             =   155
       Underline       =   False
       Visible         =   True
       Width           =   100
       _mPanelIndex    =   -1
    End
    Begin teccToggle teccToggle3
+      ActiveColor     =   &c3D90F800
       ControlID       =   ""
-      Design          =   &c3D90F800
+      CrownColor      =   &cC0C0C000
+      CrownPosition   =   2
+      DeactiveColor   =   &c92929200
       Enabled         =   True
       flag            =   0
       Height          =   34
       Index           =   -2147483648
       Indicator       =   0
       InitiallyOff    =   False
-      Left            =   595
+      Left            =   630
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -206,21 +145,22 @@ Begin WebPage wpDEMO
       LockRight       =   False
       LockTop         =   True
       LockVertical    =   False
-      Mirror          =   False
-      objectid        =   ""
       Scope           =   0
       status          =   ""
       TabIndex        =   34
       Tooltip         =   ""
-      Top             =   87
+      Top             =   113
       value           =   False
       Visible         =   True
       Width           =   66
       _mPanelIndex    =   -1
    End
    Begin teccToggle teccToggle1
+      ActiveColor     =   &c3D90F800
       ControlID       =   ""
-      Design          =   &cFF930000
+      CrownColor      =   &cFEFFFF00
+      CrownPosition   =   0
+      DeactiveColor   =   &cD4FB7800
       Enabled         =   True
       flag            =   0
       Height          =   34
@@ -235,27 +175,28 @@ Begin WebPage wpDEMO
       LockRight       =   False
       LockTop         =   True
       LockVertical    =   False
-      Mirror          =   True
-      objectid        =   ""
       Scope           =   0
       status          =   ""
       TabIndex        =   35
       Tooltip         =   ""
-      Top             =   87
+      Top             =   113
       value           =   False
       Visible         =   True
       Width           =   66
       _mPanelIndex    =   -1
    End
    Begin teccToggle teccToggle2
+      ActiveColor     =   &c3D90F800
       ControlID       =   ""
-      Design          =   &c008F5100
+      CrownColor      =   &c01189200
+      CrownPosition   =   1
+      DeactiveColor   =   &c92929200
       Enabled         =   True
       flag            =   0
       Height          =   34
       Index           =   -2147483648
       Indicator       =   0
-      InitiallyOff    =   True
+      InitiallyOff    =   False
       Left            =   429
       LockBottom      =   False
       LockedInPosition=   False
@@ -264,48 +205,14 @@ Begin WebPage wpDEMO
       LockRight       =   False
       LockTop         =   True
       LockVertical    =   False
-      Mirror          =   False
-      objectid        =   ""
       Scope           =   0
       status          =   ""
       TabIndex        =   36
       Tooltip         =   ""
-      Top             =   87
+      Top             =   113
       value           =   False
       Visible         =   True
       Width           =   66
-      _mPanelIndex    =   -1
-   End
-   Begin WebLabel lblStatus2
-      Bold            =   False
-      ControlID       =   ""
-      Enabled         =   False
-      FontName        =   ""
-      FontSize        =   0.0
-      Height          =   38
-      Index           =   -2147483648
-      Indicator       =   0
-      Italic          =   False
-      Left            =   429
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      Multiline       =   False
-      Scope           =   0
-      TabIndex        =   38
-      TabPanelIndex   =   0
-      Text            =   "-"
-      TextAlignment   =   0
-      TextColor       =   &c00000000
-      Tooltip         =   ""
-      Top             =   129
-      Underline       =   False
-      Visible         =   True
-      Width           =   100
       _mPanelIndex    =   -1
    End
    Begin WebLabel lblValue2
@@ -334,39 +241,7 @@ Begin WebPage wpDEMO
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   175
-      Underline       =   False
-      Visible         =   True
-      Width           =   100
-      _mPanelIndex    =   -1
-   End
-   Begin WebLabel lblFlag2
-      Bold            =   False
-      ControlID       =   ""
-      Enabled         =   False
-      FontName        =   ""
-      FontSize        =   0.0
-      Height          =   38
-      Index           =   -2147483648
-      Indicator       =   0
-      Italic          =   False
-      Left            =   429
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      Multiline       =   False
-      Scope           =   0
-      TabIndex        =   40
-      TabPanelIndex   =   0
-      Text            =   "-"
-      TextAlignment   =   0
-      TextColor       =   &c00000000
-      Tooltip         =   ""
-      Top             =   221
+      Top             =   155
       Underline       =   False
       Visible         =   True
       Width           =   100
@@ -398,13 +273,13 @@ Begin WebPage wpDEMO
       TextAlignment   =   0
       TextColor       =   &cC0C0C000
       Tooltip         =   ""
-      Top             =   294
+      Top             =   211
       Underline       =   False
       Visible         =   True
       Width           =   100
       _mPanelIndex    =   -1
    End
-   Begin WebLabel lblMirror2
+   Begin WebLabel lblPosition2
       Bold            =   False
       ControlID       =   ""
       Enabled         =   False
@@ -430,13 +305,13 @@ Begin WebPage wpDEMO
       TextAlignment   =   0
       TextColor       =   &cC0C0C000
       Tooltip         =   ""
-      Top             =   340
+      Top             =   257
       Underline       =   False
       Visible         =   True
       Width           =   100
       _mPanelIndex    =   -1
    End
-   Begin WebLabel lblMirror1
+   Begin WebLabel lblPosition1
       Bold            =   False
       ControlID       =   ""
       Enabled         =   True
@@ -462,7 +337,7 @@ Begin WebPage wpDEMO
       TextAlignment   =   0
       TextColor       =   &cC0C0C000
       Tooltip         =   ""
-      Top             =   340
+      Top             =   257
       Underline       =   False
       Visible         =   True
       Width           =   100
@@ -494,39 +369,7 @@ Begin WebPage wpDEMO
       TextAlignment   =   0
       TextColor       =   &cC0C0C000
       Tooltip         =   ""
-      Top             =   294
-      Underline       =   False
-      Visible         =   True
-      Width           =   100
-      _mPanelIndex    =   -1
-   End
-   Begin WebLabel lblFlag1
-      Bold            =   False
-      ControlID       =   ""
-      Enabled         =   True
-      FontName        =   ""
-      FontSize        =   0.0
-      Height          =   38
-      Index           =   -2147483648
-      Indicator       =   0
-      Italic          =   False
-      Left            =   232
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      Multiline       =   False
-      Scope           =   0
-      TabIndex        =   45
-      TabPanelIndex   =   0
-      Text            =   "-"
-      TextAlignment   =   0
-      TextColor       =   &c00000000
-      Tooltip         =   ""
-      Top             =   221
+      Top             =   211
       Underline       =   False
       Visible         =   True
       Width           =   100
@@ -558,45 +401,13 @@ Begin WebPage wpDEMO
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   175
+      Top             =   155
       Underline       =   False
       Visible         =   True
       Width           =   100
       _mPanelIndex    =   -1
    End
-   Begin WebLabel lblStatus1
-      Bold            =   False
-      ControlID       =   ""
-      Enabled         =   True
-      FontName        =   ""
-      FontSize        =   0.0
-      Height          =   38
-      Index           =   -2147483648
-      Indicator       =   0
-      Italic          =   False
-      Left            =   232
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      Multiline       =   False
-      Scope           =   0
-      TabIndex        =   47
-      TabPanelIndex   =   0
-      Text            =   "-"
-      TextAlignment   =   0
-      TextColor       =   &c00000000
-      Tooltip         =   ""
-      Top             =   129
-      Underline       =   False
-      Visible         =   True
-      Width           =   100
-      _mPanelIndex    =   -1
-   End
-   Begin WebLabel lblMirror
+   Begin WebLabel lblPosition
       Bold            =   False
       ControlID       =   ""
       Enabled         =   True
@@ -618,11 +429,11 @@ Begin WebPage wpDEMO
       Scope           =   0
       TabIndex        =   49
       TabPanelIndex   =   0
-      Text            =   "ON=Left (Mirror)?"
+      Text            =   "Crown Position"
       TextAlignment   =   0
       TextColor       =   &cC0C0C000
       Tooltip         =   ""
-      Top             =   340
+      Top             =   257
       Underline       =   False
       Visible         =   True
       Width           =   131
@@ -654,39 +465,7 @@ Begin WebPage wpDEMO
       TextAlignment   =   0
       TextColor       =   &cC0C0C000
       Tooltip         =   ""
-      Top             =   294
-      Underline       =   False
-      Visible         =   True
-      Width           =   100
-      _mPanelIndex    =   -1
-   End
-   Begin WebLabel lblFlag
-      Bold            =   False
-      ControlID       =   ""
-      Enabled         =   True
-      FontName        =   ""
-      FontSize        =   0.0
-      Height          =   38
-      Index           =   -2147483648
-      Indicator       =   0
-      Italic          =   False
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      Multiline       =   False
-      Scope           =   0
-      TabIndex        =   51
-      TabPanelIndex   =   0
-      Text            =   "me.flag"
-      TextAlignment   =   0
-      TextColor       =   &c0096FF00
-      Tooltip         =   ""
-      Top             =   221
+      Top             =   211
       Underline       =   False
       Visible         =   True
       Width           =   100
@@ -718,39 +497,7 @@ Begin WebPage wpDEMO
       TextAlignment   =   0
       TextColor       =   &c0096FF00
       Tooltip         =   ""
-      Top             =   175
-      Underline       =   False
-      Visible         =   True
-      Width           =   100
-      _mPanelIndex    =   -1
-   End
-   Begin WebLabel lblStatus
-      Bold            =   False
-      ControlID       =   ""
-      Enabled         =   True
-      FontName        =   ""
-      FontSize        =   0.0
-      Height          =   38
-      Index           =   -2147483648
-      Indicator       =   0
-      Italic          =   False
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      Multiline       =   False
-      Scope           =   0
-      TabIndex        =   53
-      TabPanelIndex   =   0
-      Text            =   "me.status"
-      TextAlignment   =   0
-      TextColor       =   &c0096FF00
-      Tooltip         =   ""
-      Top             =   129
+      Top             =   155
       Underline       =   False
       Visible         =   True
       Width           =   100
@@ -766,7 +513,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   595
+      Left            =   630
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -778,11 +525,11 @@ Begin WebPage wpDEMO
       Scope           =   0
       TabIndex        =   54
       TabPanelIndex   =   0
-      Text            =   "-"
+      Text            =   ""
       TextAlignment   =   0
       TextColor       =   &cA9A9A900
       Tooltip         =   ""
-      Top             =   403
+      Top             =   429
       Underline       =   False
       Visible         =   True
       Width           =   100
@@ -810,11 +557,11 @@ Begin WebPage wpDEMO
       Scope           =   0
       TabIndex        =   55
       TabPanelIndex   =   0
-      Text            =   "-"
+      Text            =   ""
       TextAlignment   =   0
       TextColor       =   &cA9A9A900
       Tooltip         =   ""
-      Top             =   403
+      Top             =   429
       Underline       =   False
       Visible         =   True
       Width           =   100
@@ -842,46 +589,14 @@ Begin WebPage wpDEMO
       Scope           =   0
       TabIndex        =   56
       TabPanelIndex   =   0
-      Text            =   "-"
+      Text            =   ""
       TextAlignment   =   0
       TextColor       =   &cC0C0C000
       Tooltip         =   ""
-      Top             =   403
+      Top             =   429
       Underline       =   False
       Visible         =   True
       Width           =   100
-      _mPanelIndex    =   -1
-   End
-   Begin WebLabel lblDOM
-      Bold            =   False
-      ControlID       =   ""
-      Enabled         =   True
-      FontName        =   ""
-      FontSize        =   0.0
-      Height          =   38
-      Index           =   -2147483648
-      Indicator       =   0
-      Italic          =   False
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      Multiline       =   False
-      Scope           =   0
-      TabIndex        =   57
-      TabPanelIndex   =   0
-      Text            =   "ControlID"
-      TextAlignment   =   0
-      TextColor       =   &cC0C0C000
-      Tooltip         =   ""
-      Top             =   403
-      Underline       =   False
-      Visible         =   True
-      Width           =   162
       _mPanelIndex    =   -1
    End
    Begin WebRectangle Rectangle1
@@ -894,7 +609,7 @@ Begin WebPage wpDEMO
       Indicator       =   ""
       LayoutDirection =   0
       LayoutType      =   0
-      Left            =   20
+      Left            =   181
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -905,9 +620,9 @@ Begin WebPage wpDEMO
       Scope           =   0
       TabIndex        =   58
       Tooltip         =   ""
-      Top             =   392
+      Top             =   303
       Visible         =   True
-      Width           =   675
+      Width           =   785
       _mDesignHeight  =   0
       _mDesignWidth   =   0
       _mPanelIndex    =   -1
@@ -917,7 +632,7 @@ Begin WebPage wpDEMO
       ControlID       =   ""
       Enabled         =   True
       HasBackgroundColor=   True
-      Height          =   354
+      Height          =   308
       Index           =   -2147483648
       Indicator       =   0
       LayoutDirection =   0
@@ -933,7 +648,7 @@ Begin WebPage wpDEMO
       Scope           =   0
       TabIndex        =   59
       Tooltip         =   ""
-      Top             =   87
+      Top             =   113
       Visible         =   True
       Width           =   2
       _mDesignHeight  =   0
@@ -961,9 +676,9 @@ Begin WebPage wpDEMO
       Scope           =   0
       TabIndex        =   60
       Tooltip         =   ""
-      Top             =   276
+      Top             =   201
       Visible         =   True
-      Width           =   675
+      Width           =   946
       _mDesignHeight  =   0
       _mDesignWidth   =   0
       _mPanelIndex    =   -1
@@ -990,11 +705,11 @@ Begin WebPage wpDEMO
       Scope           =   0
       TabIndex        =   61
       TabPanelIndex   =   0
-      Text            =   "if you like my work. Thank you!"
+      Text            =   "if you like my work ..."
       TextAlignment   =   0
       TextColor       =   &c0096FF00
       Tooltip         =   ""
-      Top             =   490
+      Top             =   487
       Underline       =   False
       Visible         =   True
       Width           =   303
@@ -1020,7 +735,7 @@ Begin WebPage wpDEMO
       SVGData         =   ""
       TabIndex        =   62
       Tooltip         =   ""
-      Top             =   536
+      Top             =   533
       URL             =   ""
       VerticalAlignment=   2
       Visible         =   True
@@ -1029,6 +744,428 @@ Begin WebPage wpDEMO
       _ProtectImage   =   False
    End
    Begin WebLabel lblStatus5
+      Bold            =   True
+      ControlID       =   ""
+      Enabled         =   True
+      FontName        =   ""
+      FontSize        =   40.0
+      Height          =   46
+      Index           =   -2147483648
+      Indicator       =   0
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Multiline       =   False
+      Scope           =   0
+      TabIndex        =   63
+      TabPanelIndex   =   0
+      Text            =   "teccToggle"
+      TextAlignment   =   0
+      TextColor       =   &c00539200
+      Tooltip         =   ""
+      Top             =   20
+      Underline       =   False
+      Visible         =   True
+      Width           =   218
+      _mPanelIndex    =   -1
+   End
+   Begin WebImageViewer mvxLogo
+      ControlID       =   ""
+      Enabled         =   True
+      Height          =   117
+      HorizontalAlignment=   2
+      Index           =   -2147483648
+      Indicator       =   0
+      Left            =   666
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Picture         =   1137932287
+      Scope           =   2
+      SVGData         =   ""
+      TabIndex        =   64
+      Tooltip         =   ""
+      Top             =   554
+      URL             =   ""
+      VerticalAlignment=   2
+      Visible         =   True
+      Width           =   300
+      _mPanelIndex    =   -1
+      _ProtectImage   =   False
+   End
+   Begin WebButton pbSetTrue1
+      AllowAutoDisable=   False
+      Cancel          =   False
+      Caption         =   "Set to True"
+      ControlID       =   ""
+      Default         =   False
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   3
+      Left            =   223
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Scope           =   2
+      TabIndex        =   65
+      Tooltip         =   ""
+      Top             =   337
+      Visible         =   True
+      Width           =   120
+      _mPanelIndex    =   -1
+   End
+   Begin WebButton pbSetTrue2
+      AllowAutoDisable=   False
+      Cancel          =   False
+      Caption         =   "Set to True"
+      ControlID       =   ""
+      Default         =   False
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   3
+      Left            =   429
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Scope           =   2
+      TabIndex        =   66
+      Tooltip         =   ""
+      Top             =   337
+      Visible         =   True
+      Width           =   120
+      _mPanelIndex    =   -1
+   End
+   Begin WebButton pbSetTrue3
+      AllowAutoDisable=   False
+      Cancel          =   False
+      Caption         =   "Set to True"
+      ControlID       =   ""
+      Default         =   False
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   3
+      Left            =   624
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Scope           =   2
+      TabIndex        =   67
+      Tooltip         =   ""
+      Top             =   337
+      Visible         =   True
+      Width           =   120
+      _mPanelIndex    =   -1
+   End
+   Begin WebButton pbSetFalse1
+      AllowAutoDisable=   False
+      Cancel          =   False
+      Caption         =   "Set to False"
+      ControlID       =   ""
+      Default         =   False
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   4
+      Left            =   223
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Scope           =   2
+      TabIndex        =   68
+      Tooltip         =   ""
+      Top             =   383
+      Visible         =   True
+      Width           =   120
+      _mPanelIndex    =   -1
+   End
+   Begin WebButton pbSetFalse2
+      AllowAutoDisable=   False
+      Cancel          =   False
+      Caption         =   "Set to False"
+      ControlID       =   ""
+      Default         =   False
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   4
+      Left            =   429
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Scope           =   2
+      TabIndex        =   69
+      Tooltip         =   ""
+      Top             =   383
+      Visible         =   True
+      Width           =   120
+      _mPanelIndex    =   -1
+   End
+   Begin WebButton pbSetFalse3
+      AllowAutoDisable=   False
+      Cancel          =   False
+      Caption         =   "Set to False"
+      ControlID       =   ""
+      Default         =   False
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   4
+      Left            =   624
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Scope           =   2
+      TabIndex        =   70
+      Tooltip         =   ""
+      Top             =   383
+      Visible         =   True
+      Width           =   120
+      _mPanelIndex    =   -1
+   End
+   Begin teccToggle teccToggle4
+      ActiveColor     =   &c3D90F800
+      ControlID       =   ""
+      CrownColor      =   &cD5D5D500
+      CrownPosition   =   3
+      DeactiveColor   =   &c92929200
+      Enabled         =   False
+      flag            =   0
+      Height          =   34
+      Index           =   -2147483648
+      Indicator       =   0
+      InitiallyOff    =   False
+      Left            =   846
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Scope           =   0
+      status          =   ""
+      TabIndex        =   71
+      Tooltip         =   ""
+      Top             =   113
+      value           =   False
+      Visible         =   True
+      Width           =   66
+      _mPanelIndex    =   -1
+   End
+   Begin WebButton pbEnable4
+      AllowAutoDisable=   False
+      Cancel          =   False
+      Caption         =   "Enable"
+      ControlID       =   ""
+      Default         =   False
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   7
+      Left            =   846
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Scope           =   2
+      TabIndex        =   72
+      Tooltip         =   ""
+      Top             =   337
+      Visible         =   True
+      Width           =   120
+      _mPanelIndex    =   -1
+   End
+   Begin WebButton pbDisable4
+      AllowAutoDisable=   False
+      Cancel          =   False
+      Caption         =   "Disable"
+      ControlID       =   ""
+      Default         =   False
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   8
+      Left            =   846
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Scope           =   2
+      TabIndex        =   73
+      Tooltip         =   ""
+      Top             =   383
+      Visible         =   True
+      Width           =   120
+      _mPanelIndex    =   -1
+   End
+   Begin WebLabel lblPosition4
+      Bold            =   False
+      ControlID       =   ""
+      Enabled         =   False
+      FontName        =   ""
+      FontSize        =   0.0
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   0
+      Italic          =   False
+      Left            =   846
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Multiline       =   False
+      Scope           =   0
+      TabIndex        =   74
+      TabPanelIndex   =   0
+      Text            =   "-"
+      TextAlignment   =   0
+      TextColor       =   &cC0C0C000
+      Tooltip         =   ""
+      Top             =   257
+      Underline       =   False
+      Visible         =   True
+      Width           =   100
+      _mPanelIndex    =   -1
+   End
+   Begin WebLabel lbliOff4
+      Bold            =   False
+      ControlID       =   ""
+      Enabled         =   False
+      FontName        =   ""
+      FontSize        =   0.0
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   0
+      Italic          =   False
+      Left            =   846
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Multiline       =   False
+      Scope           =   0
+      TabIndex        =   75
+      TabPanelIndex   =   0
+      Text            =   "-"
+      TextAlignment   =   0
+      TextColor       =   &cC0C0C000
+      Tooltip         =   ""
+      Top             =   211
+      Underline       =   False
+      Visible         =   True
+      Width           =   100
+      _mPanelIndex    =   -1
+   End
+   Begin WebLabel lblValue4
+      Bold            =   False
+      ControlID       =   ""
+      Enabled         =   False
+      FontName        =   ""
+      FontSize        =   0.0
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   0
+      Italic          =   False
+      Left            =   846
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Multiline       =   False
+      Scope           =   0
+      TabIndex        =   76
+      TabPanelIndex   =   0
+      Text            =   "-"
+      TextAlignment   =   0
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   155
+      Underline       =   False
+      Visible         =   True
+      Width           =   100
+      _mPanelIndex    =   -1
+   End
+   Begin WebRectangle Rectangle4
+      BackgroundColor =   &cC0C0C000
+      ControlID       =   ""
+      Enabled         =   True
+      HasBackgroundColor=   True
+      Height          =   308
+      Index           =   -2147483648
+      Indicator       =   0
+      LayoutDirection =   0
+      LayoutType      =   0
+      Left            =   792
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Scope           =   0
+      TabIndex        =   77
+      Tooltip         =   ""
+      Top             =   113
+      Visible         =   True
+      Width           =   2
+      _mDesignHeight  =   0
+      _mDesignWidth   =   0
+      _mPanelIndex    =   -1
+   End
+   Begin WebLabel lblStatus6
       Bold            =   True
       ControlID       =   ""
       Enabled         =   True
@@ -1048,26 +1185,29 @@ Begin WebPage wpDEMO
       LockVertical    =   False
       Multiline       =   False
       Scope           =   0
-      TabIndex        =   63
+      TabIndex        =   78
       TabPanelIndex   =   0
-      Text            =   "teccToggle (Xojo Web 2 Plugin)"
+      Text            =   "... Thank you!"
       TextAlignment   =   0
       TextColor       =   &c0096FF00
       Tooltip         =   ""
-      Top             =   10
+      Top             =   691
       Underline       =   False
       Visible         =   True
       Width           =   303
       _mPanelIndex    =   -1
    End
-   Begin WebImageViewer mvxLogo
+   Begin WebLabel lblStatus7
+      Bold            =   True
       ControlID       =   ""
       Enabled         =   True
-      Height          =   117
-      HorizontalAlignment=   2
+      FontName        =   ""
+      FontSize        =   20.0
+      Height          =   38
       Index           =   -2147483648
-      indicator       =   0
-      Left            =   429
+      Indicator       =   0
+      Italic          =   False
+      Left            =   232
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -1075,20 +1215,53 @@ Begin WebPage wpDEMO
       LockRight       =   False
       LockTop         =   True
       LockVertical    =   False
-      PanelIndex      =   0
-      Picture         =   1137932287
-      Scope           =   2
-      SVGData         =   ""
-      TabIndex        =   64
-      TabStop         =   True
+      Multiline       =   False
+      Scope           =   0
+      TabIndex        =   79
+      TabPanelIndex   =   0
+      Text            =   "(Xojo Web 2 Plugin)"
+      TextAlignment   =   0
+      TextColor       =   &c00539200
       Tooltip         =   ""
-      Top             =   552
-      URL             =   ""
-      VerticalAlignment=   2
+      Top             =   31
+      Underline       =   False
       Visible         =   True
-      Width           =   300
+      Width           =   194
       _mPanelIndex    =   -1
-      _ProtectImage   =   False
+   End
+   Begin WebLabel lblPosition5
+      Bold            =   False
+      ControlID       =   ""
+      Enabled         =   True
+      FontName        =   ""
+      FontSize        =   0.0
+      Height          =   108
+      Index           =   -2147483648
+      Indicator       =   0
+      Italic          =   True
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Multiline       =   True
+      PanelIndex      =   0
+      Scope           =   0
+      TabIndex        =   80
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "0: Right\n1: Left\n2: Up\n3: Down"
+      TextAlignment   =   0
+      TextColor       =   &cC0C0C000
+      Tooltip         =   ""
+      Top             =   303
+      Underline       =   False
+      Visible         =   True
+      Width           =   131
+      _mPanelIndex    =   -1
    End
 End
 #tag EndWebPage
@@ -1096,23 +1269,24 @@ End
 #tag WindowCode
 	#tag Event
 		Sub Opening()
-		  lblStatus1.Text = teccToggle1.status
 		  lblValue1.Text = teccToggle1.value.ToString
-		  lblFlag1.Text = teccToggle1.flag.ToString
 		  lbliOff1.Text = teccToggle1.InitiallyOff.ToString
-		  lblMirror1.Text = teccToggle1.Mirror.ToString
+		  lblPosition1.Text = Integer( teccToggle1.CrownPosition ).ToString
 		  
-		  lblStatus2.Text = teccToggle2.status
 		  lblValue2.Text = teccToggle2.value.ToString
-		  lblFlag2.Text = teccToggle2.flag.ToString
 		  lbliOff2.Text = teccToggle2.InitiallyOff.ToString
-		  lblMirror2.Text = teccToggle2.Mirror.ToString
+		  lblPosition2.Text = Integer( teccToggle2.CrownPosition ).ToString
 		  
-		  lblStatus3.Text = teccToggle3.status
 		  lblValue3.Text = teccToggle3.value.ToString
-		  lblFlag3.Text = teccToggle3.flag.ToString
 		  lbliOff3.Text = teccToggle3.InitiallyOff.ToString
-		  lblMirror3.Text = teccToggle3.Mirror.ToString
+		  lblPosition3.Text = Integer( teccToggle3.CrownPosition ).ToString
+		  
+		  lblValue4.Text = teccToggle4.value.ToString
+		  lbliOff4.Text = teccToggle4.InitiallyOff.ToString
+		  lblPosition4.Text = Integer( teccToggle4.CrownPosition ).ToString
+		  
+		  // Change color via Code
+		  // teccToggle4.Design = &c00ff00
 		  
 		  
 		End Sub
@@ -1129,11 +1303,7 @@ End
 #tag Events teccToggle3
 	#tag Event , Description = 4669726573207768656E2074686520636F6E74726F6C20697320636C69636B65642E2052657475726E7320746865206368616E676564207374617475732E0A737461747573203D2074686520737461747573206F662074686520636F6E74726F6C2E0A6F626A6563746964203D20746865206964206F6620746865206372656174656420444F4D20656C656D656E742E
 		Sub teccToggleClick()
-		  lblDOM3.Text = Me.objectid
-		  lblStatus3.Text = Me.status
 		  lblValue3.Text = Me.value.ToString
-		  lblFlag3.Text = Me.flag.ToString
-		  
 		  
 		End Sub
 	#tag EndEvent
@@ -1141,21 +1311,14 @@ End
 #tag Events teccToggle1
 	#tag Event , Description = 4669726573207768656E2074686520636F6E74726F6C20697320636C69636B65642E2052657475726E7320746865206368616E676564207374617475732E0A737461747573203D2074686520737461747573206F662074686520636F6E74726F6C2E0A6F626A6563746964203D20746865206964206F6620746865206372656174656420444F4D20656C656D656E742E
 		Sub teccToggleClick()
-		  lblDOM1.Text = Me.objectid
-		  lblStatus1.Text = Me.status
 		  lblValue1.Text = Me.value.ToString
-		  lblFlag1.Text = Me.flag.ToString
-		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events teccToggle2
 	#tag Event , Description = 4669726573207768656E2074686520636F6E74726F6C20697320636C69636B65642E2052657475726E7320746865206368616E676564207374617475732E0A737461747573203D2074686520737461747573206F662074686520636F6E74726F6C2E0A6F626A6563746964203D20746865206964206F6620746865206372656174656420444F4D20656C656D656E742E
 		Sub teccToggleClick()
-		  lblDOM2.Text = Me.objectid
-		  lblStatus2.Text = Me.status
 		  lblValue2.Text = Me.value.ToString
-		  lblFlag2.Text = Me.flag.ToString
 		  
 		End Sub
 	#tag EndEvent
@@ -1183,13 +1346,85 @@ End
 		  #Pragma unused x
 		  #Pragma unused y
 		  
-		  Session.GoToURL("https://xojodocs.com", False)
+		  Session.GoToURL("https://blog.xojodocs.com", False)
 		  
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Sub Opening()
 		  Me.Style.Cursor = WebStyle.Cursors.Pointer
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events pbSetTrue1
+	#tag Event
+		Sub Pressed()
+		  teccToggle1.value = True
+		  teccToggle1.UpdateBrowser
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events pbSetTrue2
+	#tag Event
+		Sub Pressed()
+		  teccToggle2.value = True
+		  teccToggle2.UpdateBrowser
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events pbSetTrue3
+	#tag Event
+		Sub Pressed()
+		  teccToggle3.value = True
+		  teccToggle3.UpdateBrowser
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events pbSetFalse1
+	#tag Event
+		Sub Pressed()
+		  teccToggle1.value = false
+		  teccToggle1.UpdateBrowser
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events pbSetFalse2
+	#tag Event
+		Sub Pressed()
+		  teccToggle2.value = False
+		  teccToggle2.UpdateBrowser
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events pbSetFalse3
+	#tag Event
+		Sub Pressed()
+		  teccToggle3.value = False
+		  teccToggle3.UpdateBrowser
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events teccToggle4
+	#tag Event , Description = 4669726573207768656E2074686520636F6E74726F6C20697320636C69636B65642E2052657475726E7320746865206368616E676564207374617475732E0A737461747573203D2074686520737461747573206F662074686520636F6E74726F6C2E0A6F626A6563746964203D20746865206964206F6620746865206372656174656420444F4D20656C656D656E742E
+		Sub teccToggleClick()
+		  lblValue4.Text = Me.value.ToString
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events pbEnable4
+	#tag Event
+		Sub Pressed()
+		  teccToggle4.Enabled = True
+		  teccToggle4.UpdateBrowser
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events pbDisable4
+	#tag Event
+		Sub Pressed()
+		  teccToggle4.Enabled = False
+		  teccToggle4.UpdateBrowser
 		End Sub
 	#tag EndEvent
 #tag EndEvents
