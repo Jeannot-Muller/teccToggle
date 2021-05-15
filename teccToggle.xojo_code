@@ -5,7 +5,8 @@ Inherits WebSDKUIControl
 		Sub DrawControlInLayoutEditor(g as graphics)
 		  // Visual WebSDK controls can "draw" themselves in the IDE
 		  
-		  // todo
+		  // todo4
+		  
 		  Select Case IntegerProperty("CrownPosition")
 		  Case 0
 		    Var activeColor As Color = ColorProperty( "ActiveColor" ) 
