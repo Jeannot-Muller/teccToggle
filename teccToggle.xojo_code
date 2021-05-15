@@ -268,6 +268,23 @@ Inherits WebSDKUIControl
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		Sub setCrownPosition(x as integer)
+		  Select Case x
+		  Case 0
+		    CrownPosition = cpositions.right
+		  Case 1
+		    CrownPosition = cpositions.Left
+		  Case 2
+		    CrownPosition = cpositions.Top
+		  Case 3
+		    CrownPosition = cpositions.Bottom
+		  End Select
+		  
+		  UpdateBrowser
+		End Sub
+	#tag EndMethod
+
 
 	#tag Hook, Flags = &h0, Description = 4669726573207768656E2074686520636F6E74726F6C20697320636C69636B65642E2052657475726E7320746865206368616E676564207374617475732E0A737461747573203D2074686520737461747573206F662074686520636F6E74726F6C2E0A6F626A6563746964203D20746865206964206F6620746865206372656174656420444F4D20656C656D656E742E
 		Event teccToggleClick()

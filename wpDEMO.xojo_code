@@ -4,7 +4,7 @@ Begin WebPage wpDEMO
    Compatibility   =   ""
    ControlID       =   ""
    Enabled         =   False
-   Height          =   733
+   Height          =   779
    ImplicitInstance=   True
    Index           =   -2147483648
    Indicator       =   0
@@ -39,7 +39,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   630
+      Left            =   691
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -71,7 +71,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   630
+      Left            =   691
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -103,7 +103,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   630
+      Left            =   691
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -137,7 +137,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       InitiallyOff    =   False
-      Left            =   630
+      Left            =   691
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -148,7 +148,7 @@ Begin WebPage wpDEMO
       Scope           =   0
       status          =   ""
       TabIndex        =   34
-      Tooltip         =   ""
+      Tooltip         =   "Tooltip Example"
       Top             =   94
       value           =   False
       Visible         =   True
@@ -166,8 +166,8 @@ Begin WebPage wpDEMO
       Height          =   68
       Index           =   -2147483648
       Indicator       =   0
-      InitiallyOff    =   True
-      Left            =   232
+      InitiallyOff    =   False
+      Left            =   293
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -178,7 +178,7 @@ Begin WebPage wpDEMO
       Scope           =   0
       status          =   ""
       TabIndex        =   35
-      Tooltip         =   "0=Right"
+      Tooltip         =   "Tooltip Example"
       Top             =   94
       value           =   False
       Visible         =   True
@@ -197,7 +197,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       InitiallyOff    =   False
-      Left            =   428
+      Left            =   489
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -208,7 +208,7 @@ Begin WebPage wpDEMO
       Scope           =   0
       status          =   ""
       TabIndex        =   36
-      Tooltip         =   ""
+      Tooltip         =   "Tooltip Example"
       Top             =   94
       value           =   False
       Visible         =   True
@@ -225,7 +225,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   429
+      Left            =   490
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -257,7 +257,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   429
+      Left            =   490
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -289,7 +289,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   429
+      Left            =   490
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -321,7 +321,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   232
+      Left            =   293
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -353,7 +353,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   232
+      Left            =   293
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -385,7 +385,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   232
+      Left            =   293
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -472,7 +472,7 @@ Begin WebPage wpDEMO
       _mPanelIndex    =   -1
    End
    Begin WebLabel lblValue
-      Bold            =   False
+      Bold            =   True
       ControlID       =   ""
       Enabled         =   True
       FontName        =   ""
@@ -495,7 +495,7 @@ Begin WebPage wpDEMO
       TabPanelIndex   =   0
       Text            =   "me.value"
       TextAlignment   =   0
-      TextColor       =   &c0096FF00
+      TextColor       =   &c00000000
       Tooltip         =   ""
       Top             =   155
       Underline       =   False
@@ -513,7 +513,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   630
+      Left            =   691
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -545,7 +545,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   429
+      Left            =   490
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -577,7 +577,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   232
+      Left            =   293
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -609,7 +609,7 @@ Begin WebPage wpDEMO
       Indicator       =   ""
       LayoutDirection =   0
       LayoutType      =   0
-      Left            =   181
+      Left            =   242
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -632,12 +632,12 @@ Begin WebPage wpDEMO
       ControlID       =   ""
       Enabled         =   True
       HasBackgroundColor=   True
-      Height          =   308
+      Height          =   354
       Index           =   -2147483648
       Indicator       =   0
       LayoutDirection =   0
       LayoutType      =   0
-      Left            =   181
+      Left            =   242
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -678,13 +678,13 @@ Begin WebPage wpDEMO
       Tooltip         =   ""
       Top             =   201
       Visible         =   True
-      Width           =   946
+      Width           =   1007
       _mDesignHeight  =   0
       _mDesignWidth   =   0
       _mPanelIndex    =   -1
    End
    Begin WebLabel lblStatus4
-      Bold            =   True
+      Bold            =   False
       ControlID       =   ""
       Enabled         =   True
       FontName        =   ""
@@ -705,14 +705,14 @@ Begin WebPage wpDEMO
       Scope           =   0
       TabIndex        =   61
       TabPanelIndex   =   0
-      Text            =   "if you like my work ..."
+      Text            =   "if you like my work, you might want to"
       TextAlignment   =   0
-      TextColor       =   &c0096FF00
+      TextColor       =   &c00539200
       Tooltip         =   ""
-      Top             =   487
+      Top             =   517
       Underline       =   False
       Visible         =   True
-      Width           =   303
+      Width           =   383
       _mPanelIndex    =   -1
    End
    Begin WebImageViewer theFairnessButton
@@ -735,7 +735,7 @@ Begin WebPage wpDEMO
       SVGData         =   ""
       TabIndex        =   62
       Tooltip         =   ""
-      Top             =   533
+      Top             =   563
       URL             =   ""
       VerticalAlignment=   2
       Visible         =   True
@@ -782,7 +782,7 @@ Begin WebPage wpDEMO
       HorizontalAlignment=   2
       Index           =   -2147483648
       Indicator       =   0
-      Left            =   666
+      Left            =   727
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -795,7 +795,7 @@ Begin WebPage wpDEMO
       SVGData         =   ""
       TabIndex        =   64
       Tooltip         =   ""
-      Top             =   554
+      Top             =   642
       URL             =   ""
       VerticalAlignment=   2
       Visible         =   True
@@ -813,7 +813,7 @@ Begin WebPage wpDEMO
       Height          =   38
       Index           =   -2147483648
       Indicator       =   3
-      Left            =   223
+      Left            =   284
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -839,7 +839,7 @@ Begin WebPage wpDEMO
       Height          =   38
       Index           =   -2147483648
       Indicator       =   3
-      Left            =   429
+      Left            =   490
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -865,7 +865,7 @@ Begin WebPage wpDEMO
       Height          =   38
       Index           =   -2147483648
       Indicator       =   3
-      Left            =   624
+      Left            =   685
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -891,7 +891,7 @@ Begin WebPage wpDEMO
       Height          =   38
       Index           =   -2147483648
       Indicator       =   4
-      Left            =   223
+      Left            =   284
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -917,7 +917,7 @@ Begin WebPage wpDEMO
       Height          =   38
       Index           =   -2147483648
       Indicator       =   4
-      Left            =   429
+      Left            =   490
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -943,7 +943,7 @@ Begin WebPage wpDEMO
       Height          =   38
       Index           =   -2147483648
       Indicator       =   4
-      Left            =   624
+      Left            =   685
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -971,7 +971,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       InitiallyOff    =   False
-      Left            =   846
+      Left            =   907
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -982,7 +982,7 @@ Begin WebPage wpDEMO
       Scope           =   0
       status          =   ""
       TabIndex        =   71
-      Tooltip         =   ""
+      Tooltip         =   "Tooltip Example"
       Top             =   94
       value           =   False
       Visible         =   True
@@ -999,7 +999,7 @@ Begin WebPage wpDEMO
       Height          =   38
       Index           =   -2147483648
       Indicator       =   7
-      Left            =   846
+      Left            =   907
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -1025,7 +1025,7 @@ Begin WebPage wpDEMO
       Height          =   38
       Index           =   -2147483648
       Indicator       =   8
-      Left            =   846
+      Left            =   907
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -1051,7 +1051,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   846
+      Left            =   907
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -1083,7 +1083,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   846
+      Left            =   907
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -1115,7 +1115,7 @@ Begin WebPage wpDEMO
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   False
-      Left            =   846
+      Left            =   907
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -1142,12 +1142,12 @@ Begin WebPage wpDEMO
       ControlID       =   ""
       Enabled         =   True
       HasBackgroundColor=   True
-      Height          =   308
+      Height          =   354
       Index           =   -2147483648
       Indicator       =   0
       LayoutDirection =   0
       LayoutType      =   0
-      Left            =   792
+      Left            =   855
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -1160,13 +1160,13 @@ Begin WebPage wpDEMO
       Tooltip         =   ""
       Top             =   113
       Visible         =   True
-      Width           =   2
+      Width           =   4
       _mDesignHeight  =   0
       _mDesignWidth   =   0
       _mPanelIndex    =   -1
    End
    Begin WebLabel lblStatus6
-      Bold            =   True
+      Bold            =   False
       ControlID       =   ""
       Enabled         =   True
       FontName        =   ""
@@ -1187,11 +1187,11 @@ Begin WebPage wpDEMO
       Scope           =   0
       TabIndex        =   78
       TabPanelIndex   =   0
-      Text            =   "... Thank you!"
+      Text            =   " Thank you!"
       TextAlignment   =   0
-      TextColor       =   &c0096FF00
+      TextColor       =   &c00539200
       Tooltip         =   ""
-      Top             =   691
+      Top             =   721
       Underline       =   False
       Visible         =   True
       Width           =   303
@@ -1235,11 +1235,11 @@ Begin WebPage wpDEMO
       Enabled         =   True
       FontName        =   ""
       FontSize        =   0.0
-      Height          =   137
+      Height          =   125
       Index           =   -2147483648
       Indicator       =   0
       Italic          =   True
-      Left            =   20
+      Left            =   30
       LockBottom      =   False
       LockedInPosition=   False
       LockHorizontal  =   False
@@ -1251,14 +1251,133 @@ Begin WebPage wpDEMO
       Scope           =   0
       TabIndex        =   80
       TabPanelIndex   =   0
-      Text            =   "0: Right\n1: Left\n2: Top\n3: Bottom\nØ: Deactivate"
+      Text            =   "0: Right\n1: Left\n2: Top\n3: Bottom"
       TextAlignment   =   0
       TextColor       =   &cC0C0C000
       Tooltip         =   ""
-      Top             =   303
+      Top             =   296
       Underline       =   False
       Visible         =   True
-      Width           =   131
+      Width           =   208
+      _mPanelIndex    =   -1
+   End
+   Begin WebPopupMenu pm1
+      ControlID       =   ""
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   6
+      InitialValue    =   "Right\nLeft\nTop\nBottom"
+      LastAddedRowIndex=   0
+      LastRowIndex    =   0
+      Left            =   284
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      RowCount        =   0
+      Scope           =   2
+      SelectedRowIndex=   0
+      SelectedRowValue=   ""
+      TabIndex        =   81
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   429
+      Visible         =   True
+      Width           =   120
+      _mPanelIndex    =   -1
+   End
+   Begin WebPopupMenu pm2
+      ControlID       =   ""
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      indicator       =   6
+      InitialValue    =   "Right\nLeft\nTop\nBottom"
+      LastAddedRowIndex=   0
+      LastRowIndex    =   0
+      Left            =   489
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      PanelIndex      =   0
+      RowCount        =   0
+      Scope           =   2
+      SelectedRowIndex=   0
+      SelectedRowValue=   ""
+      TabIndex        =   82
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   429
+      Visible         =   True
+      Width           =   120
+      _mPanelIndex    =   -1
+   End
+   Begin WebPopupMenu pm3
+      ControlID       =   ""
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      indicator       =   6
+      InitialValue    =   "Right\nLeft\nTop\nBottom"
+      LastAddedRowIndex=   0
+      LastRowIndex    =   0
+      Left            =   685
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      PanelIndex      =   0
+      RowCount        =   0
+      Scope           =   2
+      SelectedRowIndex=   0
+      SelectedRowValue=   ""
+      TabIndex        =   83
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   429
+      Visible         =   True
+      Width           =   120
+      _mPanelIndex    =   -1
+   End
+   Begin WebPopupMenu pm4
+      ControlID       =   ""
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      indicator       =   6
+      InitialValue    =   "Right\nLeft\nTop\nBottom"
+      LastAddedRowIndex=   0
+      LastRowIndex    =   0
+      Left            =   907
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      PanelIndex      =   0
+      RowCount        =   0
+      Scope           =   2
+      SelectedRowIndex=   0
+      SelectedRowValue=   ""
+      TabIndex        =   84
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   429
+      Visible         =   True
+      Width           =   120
       _mPanelIndex    =   -1
    End
 End
@@ -1423,6 +1542,34 @@ End
 		Sub Pressed()
 		  teccToggle4.Enabled = False
 		  teccToggle4.UpdateBrowser
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events pm1
+	#tag Event
+		Sub SelectionChanged(item as WebMenuItem)
+		  teccToggle1.setCrownPosition( me.SelectedRowIndex )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events pm2
+	#tag Event
+		Sub SelectionChanged(item as WebMenuItem)
+		  teccToggle2.setCrownPosition( me.SelectedRowIndex )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events pm3
+	#tag Event
+		Sub SelectionChanged(item as WebMenuItem)
+		  teccToggle3.setCrownPosition( me.SelectedRowIndex )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events pm4
+	#tag Event
+		Sub SelectionChanged(item as WebMenuItem)
+		  teccToggle4.setCrownPosition( me.SelectedRowIndex )
 		End Sub
 	#tag EndEvent
 #tag EndEvents
