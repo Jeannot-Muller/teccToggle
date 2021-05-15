@@ -4,9 +4,14 @@ Inherits WebSDKUIControl
 	#tag Event
 		Sub DrawControlInLayoutEditor(g as graphics)
 		  // Visual WebSDK controls can "draw" themselves in the IDE
-		  g.DrawingColor = &c3D90F8
+		  Var activeColor As Color = ColorProperty( "ActiveColor" ) 
+		  
+		  g.DrawingColor = activeColor
 		  g.FillRoundRectangle(0, 0, 66, 29, 18, 18)
-		  g.DrawingColor = &cffffff
+		  
+		  Var crownColor As Color = ColorProperty( "CrownColor" ) 
+		  
+		  g.DrawingColor = crownColor
 		  g.FillOval(40,5,18,18)
 		  
 		  If BooleanProperty("enabled") = False Then

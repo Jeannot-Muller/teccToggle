@@ -126,7 +126,7 @@ Begin WebPage wpDEMO
       _mPanelIndex    =   -1
    End
    Begin teccToggle teccToggle3
-      ActiveColor     =   &c3D90F800
+      ActiveColor     =   &cFF260000
       ControlID       =   ""
       CrownColor      =   &cC0C0C000
       CrownPosition   =   2
@@ -178,7 +178,7 @@ Begin WebPage wpDEMO
       Scope           =   0
       status          =   ""
       TabIndex        =   35
-      Tooltip         =   ""
+      Tooltip         =   "0=Right"
       Top             =   113
       value           =   False
       Visible         =   True
@@ -1248,11 +1248,9 @@ Begin WebPage wpDEMO
       LockTop         =   True
       LockVertical    =   False
       Multiline       =   True
-      PanelIndex      =   0
       Scope           =   0
       TabIndex        =   80
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "0: Right\n1: Left\n2: Up\n3: Down"
       TextAlignment   =   0
       TextColor       =   &cC0C0C000
