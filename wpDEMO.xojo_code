@@ -181,7 +181,7 @@ Begin WebPage wpDEMO
       Tooltip         =   "0=Right"
       Top             =   94
       value           =   False
-      Visible         =   False
+      Visible         =   True
       Width           =   68
       _mPanelIndex    =   -1
    End
