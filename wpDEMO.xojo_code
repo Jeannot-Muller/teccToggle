@@ -798,7 +798,7 @@ Begin WebPage wpDEMO
       SVGData         =   ""
       TabIndex        =   64
       Tooltip         =   ""
-      Top             =   642
+      Top             =   603
       URL             =   ""
       VerticalAlignment=   2
       Visible         =   True
@@ -1377,6 +1377,33 @@ Begin WebPage wpDEMO
       Width           =   120
       _mPanelIndex    =   -1
    End
+   Begin WebButton pbBlog
+      AllowAutoDisable=   False
+      Cancel          =   False
+      Caption         =   "blog.xojodocs.com"
+      ControlID       =   ""
+      Default         =   False
+      Enabled         =   True
+      Height          =   38
+      Index           =   -2147483648
+      Indicator       =   9
+      Left            =   420
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Scope           =   2
+      TabIndex        =   85
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   688
+      Visible         =   True
+      Width           =   315
+      _mPanelIndex    =   -1
+   End
 End
 #tag EndWebPage
 
@@ -1567,6 +1594,13 @@ End
 	#tag Event
 		Sub SelectionChanged(item as WebMenuItem)
 		  teccToggle4.setCrownPosition( me.SelectedRowIndex )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events pbBlog
+	#tag Event
+		Sub Pressed()
+		  session.GoToURL( "https://blog.xojodocs.com", true )
 		End Sub
 	#tag EndEvent
 #tag EndEvents
