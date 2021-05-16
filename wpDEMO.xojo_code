@@ -130,7 +130,7 @@ Begin WebPage wpDEMO
       ActiveCrown     =   &cFFFFFF00
       ControlID       =   ""
       CrownPosition   =   2
-      DeactiveColor   =   &c00000000
+      DeactiveColor   =   &cA9A9A900
       DeactiveCrown   =   &cFFFFFF00
       Enabled         =   True
       flag            =   0
@@ -157,12 +157,12 @@ Begin WebPage wpDEMO
       _mPanelIndex    =   -1
    End
    Begin teccToggle teccToggle1
-      ActiveColor     =   &c00000000
-      ActiveCrown     =   &c00F90000
+      ActiveColor     =   &c79797900
+      ActiveCrown     =   &c8DF90000
       ControlID       =   ""
       CrownPosition   =   0
-      DeactiveColor   =   &c00000000
-      DeactiveCrown   =   &cFF260000
+      DeactiveColor   =   &c79797900
+      DeactiveCrown   =   &cFF7D7800
       Enabled         =   True
       flag            =   0
       Height          =   68
