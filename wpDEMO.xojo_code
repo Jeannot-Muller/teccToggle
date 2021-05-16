@@ -28,6 +28,7 @@ Begin WebPage wpDEMO
    _ImplicitInstance=   False
    _mDesignHeight  =   0
    _mDesignWidth   =   0
+   _mName          =   ""
    _mPanelIndex    =   -1
    Begin WebLabel lblPosition3
       Bold            =   False
@@ -1532,7 +1533,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle1.value = True
-		  teccToggle1.UpdateBrowser
+		  teccToggle1.UpdateControl
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1540,7 +1541,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle2.value = True
-		  teccToggle2.UpdateBrowser
+		  teccToggle2.UpdateControl
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1548,7 +1549,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle3.value = True
-		  teccToggle3.UpdateBrowser
+		  teccToggle3.UpdateControl
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1556,7 +1557,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle1.value = false
-		  teccToggle1.UpdateBrowser
+		  teccToggle1.UpdateControl
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1564,7 +1565,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle2.value = False
-		  teccToggle2.UpdateBrowser
+		  teccToggle2.UpdateControl
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1572,7 +1573,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle3.value = False
-		  teccToggle3.UpdateBrowser
+		  teccToggle3.UpdateControl
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1588,7 +1589,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle4.Enabled = True
-		  teccToggle4.UpdateBrowser
+		  teccToggle4.UpdateControl
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1596,35 +1597,39 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle4.Enabled = False
-		  teccToggle4.UpdateBrowser
+		  teccToggle4.UpdateControl
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events pm1
 	#tag Event
 		Sub SelectionChanged(item as WebMenuItem)
-		  teccToggle1.setCrownPosition( me.SelectedRowIndex )
+		  teccToggle1.setCrownPosition( Me.SelectedRowIndex )
+		  #Pragma unused item
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events pm2
 	#tag Event
 		Sub SelectionChanged(item as WebMenuItem)
-		  teccToggle2.setCrownPosition( me.SelectedRowIndex )
+		  teccToggle2.setCrownPosition( Me.SelectedRowIndex )
+		  #Pragma unused item
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events pm3
 	#tag Event
 		Sub SelectionChanged(item as WebMenuItem)
-		  teccToggle3.setCrownPosition( me.SelectedRowIndex )
+		  teccToggle3.setCrownPosition( Me.SelectedRowIndex )
+		  #Pragma unused item
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events pm4
 	#tag Event
 		Sub SelectionChanged(item as WebMenuItem)
-		  teccToggle4.setCrownPosition( me.SelectedRowIndex )
+		  teccToggle4.setCrownPosition( Me.SelectedRowIndex )
+		  #Pragma unused item
 		End Sub
 	#tag EndEvent
 #tag EndEvents
