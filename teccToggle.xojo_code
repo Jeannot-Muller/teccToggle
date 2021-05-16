@@ -24,7 +24,9 @@ Inherits WebSDKUIControl
 		      g.DrawingColor = ColorProperty( "ActiveCrown" ) 
 		      g.FillOval(40,5,18,18)
 		      g.DrawingColor = ColorProperty( "DeactiveColor" ) 
-		      g.DrawText( chr(216), 7, 22 )
+		      g.DrawText( Chr(216), 7, 22 )
+		      g.DrawingColor = ColorProperty( "DeactiveCrown" ) 
+		      g.FillOval(45,10,8,8)
 		    Case 1
 		      g.DrawingColor = ColorProperty( "ActiveColor" ) 
 		      g.FillRoundRectangle(0, 0, 66, 29, 18, 18)
@@ -32,20 +34,26 @@ Inherits WebSDKUIControl
 		      g.FillOval(10,5,18,18)
 		      g.DrawingColor = ColorProperty( "DeactiveColor" ) 
 		      g.DrawText( Chr(216), 43, 22 )
+		      g.DrawingColor = ColorProperty( "DeactiveCrown" ) 
+		      g.FillOval(15,10,8,8)
 		    Case 2
 		      g.DrawingColor = ColorProperty( "ActiveColor" ) 
 		      g.FillRoundRectangle(0, 0, 29, 66, 18, 18)
 		      g.DrawingColor = ColorProperty( "ActiveCrown" ) 
 		      g.FillOval(5,8,18,18)
 		      g.DrawingColor = ColorProperty( "DeactiveColor" ) 
-		      g.DrawText( chr(216), 7, 60 )
+		      g.DrawText( Chr(216), 7, 60 )
+		      g.DrawingColor = ColorProperty( "DeactiveCrown" ) 
+		      g.FillOval(10,13,8,8)
 		    Case 3
 		      g.DrawingColor = ColorProperty( "ActiveColor" ) 
 		      g.FillRoundRectangle(0, 0, 29, 66, 18, 18)
 		      g.DrawingColor = ColorProperty( "ActiveCrown" ) 
 		      g.FillOval(5,40,18,18)
 		      g.DrawingColor = ColorProperty( "DeactiveColor" ) 
-		      g.DrawText( chr(216), 6, 22 )
+		      g.DrawText( Chr(216), 6, 22 )
+		      g.DrawingColor = ColorProperty( "DeactiveCrown" ) 
+		      g.FillOval(10,45,8,8)
 		    End Select
 		  end if
 		  

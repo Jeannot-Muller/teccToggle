@@ -131,7 +131,7 @@ Begin WebPage wpDEMO
       ControlID       =   ""
       CrownPosition   =   2
       DeactiveColor   =   &cA9A9A900
-      DeactiveCrown   =   &cFFFFFF00
+      DeactiveCrown   =   &cFF260000
       Enabled         =   True
       flag            =   0
       Height          =   68
@@ -968,7 +968,7 @@ Begin WebPage wpDEMO
       ControlID       =   ""
       CrownPosition   =   3
       DeactiveColor   =   &c01189200
-      DeactiveCrown   =   &cFFFFFF00
+      DeactiveCrown   =   &c01189200
       Enabled         =   False
       flag            =   0
       Height          =   68
