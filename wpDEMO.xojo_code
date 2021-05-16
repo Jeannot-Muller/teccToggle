@@ -968,7 +968,7 @@ Begin WebPage wpDEMO
       ControlID       =   ""
       CrownPosition   =   3
       DeactiveColor   =   &c01189200
-      DeactiveCrown   =   &c01189200
+      DeactiveCrown   =   &cC0C0C000
       Enabled         =   False
       flag            =   0
       Height          =   68
@@ -1422,11 +1422,9 @@ Begin WebPage wpDEMO
       LockTop         =   True
       LockVertical    =   False
       Multiline       =   False
-      PanelIndex      =   0
       Scope           =   0
       TabIndex        =   86
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "DEMO"
       TextAlignment   =   0
       TextColor       =   &c00539200
