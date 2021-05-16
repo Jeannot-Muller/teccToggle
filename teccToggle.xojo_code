@@ -21,28 +21,28 @@ Inherits WebSDKUIControl
 		    Case 0
 		      g.DrawingColor = ColorProperty( "ActiveColor" ) 
 		      g.FillRoundRectangle(0, 0, 66, 29, 18, 18)
-		      g.DrawingColor = ColorProperty( "CrownColor" ) 
+		      g.DrawingColor = ColorProperty( "ActiveCrown" ) 
 		      g.FillOval(40,5,18,18)
 		      g.DrawingColor = ColorProperty( "DeactiveColor" ) 
 		      g.DrawText( chr(216), 7, 22 )
 		    Case 1
 		      g.DrawingColor = ColorProperty( "ActiveColor" ) 
 		      g.FillRoundRectangle(0, 0, 66, 29, 18, 18)
-		      g.DrawingColor = ColorProperty( "CrownColor" ) 
+		      g.DrawingColor = ColorProperty( "ActiveCrown" ) 
 		      g.FillOval(10,5,18,18)
 		      g.DrawingColor = ColorProperty( "DeactiveColor" ) 
 		      g.DrawText( Chr(216), 43, 22 )
 		    Case 2
 		      g.DrawingColor = ColorProperty( "ActiveColor" ) 
 		      g.FillRoundRectangle(0, 0, 29, 66, 18, 18)
-		      g.DrawingColor = ColorProperty( "CrownColor" ) 
+		      g.DrawingColor = ColorProperty( "ActiveCrown" ) 
 		      g.FillOval(5,8,18,18)
 		      g.DrawingColor = ColorProperty( "DeactiveColor" ) 
 		      g.DrawText( chr(216), 7, 60 )
 		    Case 3
 		      g.DrawingColor = ColorProperty( "ActiveColor" ) 
 		      g.FillRoundRectangle(0, 0, 29, 66, 18, 18)
-		      g.DrawingColor = ColorProperty( "CrownColor" ) 
+		      g.DrawingColor = ColorProperty( "ActiveCrown" ) 
 		      g.FillOval(5,40,18,18)
 		      g.DrawingColor = ColorProperty( "DeactiveColor" ) 
 		      g.DrawText( chr(216), 6, 22 )
@@ -146,7 +146,9 @@ Inherits WebSDKUIControl
 		  js.value("coloron") = "#" + ActiveColor.ToString.Right(6)
 		  js.value("coloroff") = "#" + DeactiveColor.ToString.Right(6)
 		  js.value("crownposition") = cposition 
-		  js.value("crowncolor") = "#" + CrownColor.ToString.Right(6)
+		  js.value("activecrown") = "#" + ActiveCrown.ToString.Right(6)
+		  js.value("deactivecrown") = "#" + DeactiveCrown.ToString.Right(6)
+		  
 		  
 		  
 		  
@@ -171,6 +173,7 @@ Inherits WebSDKUIControl
 		    css.Add("height: 1.7rem;")
 		    css.Add("--crown: white;")
 		    css.Add("--deactive: #929292;")
+		    css.Add("--deactive-crown: #ff0000;")
 		    css.Add("}")
 		    
 		    css.Add(".toggle Input {")
@@ -200,7 +203,7 @@ Inherits WebSDKUIControl
 		    css.Add("display: block;")
 		    css.Add("Left: 0.5rem;")
 		    css.Add("bottom: 0.31rem;")
-		    css.Add("background-Color: var(--crown);")
+		    css.Add("background-Color: var(--crown) !important;")
 		    css.Add("transition: all 0.3s;")
 		    css.Add("}")
 		    
@@ -209,6 +212,8 @@ Inherits WebSDKUIControl
 		    css.Add("}")
 		    
 		    css.Add("Input:checked + .roundbutton:before  {")
+		    css.Add("background-Color: var(--deactive-crown) !important;")
+		    css.Add("transition: background-Color;")
 		    css.Add("transform: translate(1.9Rem, 0);")
 		    css.Add("}")
 		    
@@ -243,7 +248,7 @@ Inherits WebSDKUIControl
 		    JSFramework.Filename = "teccToggle.js"
 		    JSFramework.MIMEType ="text/javascript"
 		    JSFramework.data = kJSCode
-		    JSFramework.Session = Nil // Very important, so this file will be available to all sessions
+		    JSFramework.Session = Nil 
 		  End If
 		  
 		  Dim urls() As String
@@ -296,7 +301,7 @@ Inherits WebSDKUIControl
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		CrownColor As color = &cffffff
+		ActiveCrown As color = &cffffff
 	#tag EndProperty
 
 	#tag Property, Flags = &h0, Description = 4D6972726F72
@@ -305,6 +310,10 @@ Inherits WebSDKUIControl
 
 	#tag Property, Flags = &h0, Description = 44657369676E
 		DeactiveColor As color = &c929292
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		DeactiveCrown As color = &cffffff
 	#tag EndProperty
 
 	#tag ComputedProperty, Flags = &h0
@@ -378,7 +387,7 @@ Inherits WebSDKUIControl
 	#tag EndComputedProperty
 
 
-	#tag Constant, Name = kJSCode, Type = String, Dynamic = False, Default = \"\"use strict\";\nvar tecc;\n(function (tecc) {\n    class teccToggle extends XojoWeb.XojoVisualControl {\n        constructor(id\x2C events) {\n            super(id\x2C events);\n        }\n        render() {\n            super.render();\n            let el \x3D this.DOMElement();\n            if (!el)\n                return;\n            this.setAttributes();\n            var idstr \x3D el.id + \"_teccToggle\";\n            let btn \x3D document.createElement(\"div\");\n            var disabledStr \x3D \"\";\n            var opacityStr \x3D \"\";\n            if (!this.enabled) {\n                disabledStr \x3D \"disabled\x3D\'disabled\'\";\n                opacityStr \x3D \";opacity: 20%\";\n            }\n            ;\n            var iOff \x3D \"\";\n            if (this.off \x3D\x3D true) {\n                iOff \x3D \"checked\x3D\'checked\'\";\n            }\n            ;\n            var cbid \x3D \"ts\" + idstr;\n            btn.innerHTML \x3D \"<label class\x3D\'toggle\'><input id\x3D\'\" + cbid + \"\' + class\x3D\'teccCB\' \" + iOff + \" type\x3D\'checkbox\' \" + disabledStr + \"><span class\x3D\'roundbutton\' style\x3D\'--crown:\" + this.crowncolor + \";--deactive:\" + this.coloroff + \"; background-color: \" + this.coloron + opacityStr + \";transform: rotate(\" + this.crownposition + \"deg) scaleX(-1) !important;\" + \"\'></span></label>\";\n            btn.id \x3D idstr;\n            btn.addEventListener(\"click\"\x2C function (event) {\n                var controlObject \x3D XojoWeb.getNamedControl(el.id);\n                var jsonObj \x3D new XojoWeb.JSONItem();\n                jsonObj.set(\'ID\'\x2C el.id);\n                jsonObj.set(\'target\'\x2C event.target.tagName);\n                var c \x3D document.getElementById(cbid).checked;\n                jsonObj.set(\'value\'\x2C !c);\n                controlObject.triggerServerEvent(\'teccToggleClick\'\x2C jsonObj)\x2C true;\n            });\n            this.replaceEveryChild(btn);\n            this.applyTooltip(el);\n            this.applyUserStyle();\n        }\n        updateControl(data) {\n            super.updateControl(data);\n            let js \x3D $.parseJSON(data);\n            this.refresh();\n            this.off \x3D js.off;\n            this.coloron \x3D js.coloron;\n            this.crownposition \x3D js.crownposition;\n            this.crowncolor \x3D js.crowncolor;\n            this.coloroff \x3D js.coloroff;\n        }\n    }\n    tecc.teccToggle \x3D teccToggle;\n})(tecc || (tecc \x3D {}));\n", Scope = Private
+	#tag Constant, Name = kJSCode, Type = String, Dynamic = False, Default = \"\"use strict\";\nvar tecc;\n(function (tecc) {\n    class teccToggle extends XojoWeb.XojoVisualControl {\n        constructor(id\x2C events) {\n            super(id\x2C events);\n        }\n        render() {\n            super.render();\n            let el \x3D this.DOMElement();\n            if (!el)\n                return;\n            this.setAttributes(el);\n            var idstr \x3D el.id + \"_teccToggle\";\n            let btn \x3D document.createElement(\"div\");\n            var disabledStr \x3D \"\";\n            var opacityStr \x3D \"\";\n            if (!this.enabled) {\n                disabledStr \x3D \"disabled\x3D\'disabled\'\";\n                opacityStr \x3D \";opacity: 20%\";\n            }\n            ;\n            var iOff \x3D \"\";\n            if (this.off \x3D\x3D true) {\n                iOff \x3D \"checked\x3D\'checked\'\";\n            }\n            ;\n            var cbid \x3D \"ts\" + idstr;\n            btn.innerHTML \x3D \"<label class\x3D\'toggle\'><input id\x3D\'\" + cbid + \"\' + class\x3D\'teccCB\' \" + iOff + \" type\x3D\'checkbox\' \" + disabledStr + \"><span class\x3D\'roundbutton\' style\x3D\'--crown:\" + this.activecrown + \"; --deactive-crown:\" + this.deactivecrown + \"; --deactive:\" + this.coloroff + \"; background-color: \" + this.coloron + opacityStr + \";transform: rotate(\" + this.crownposition + \"deg) scaleX(-1) !important;\" + \"\'></span></label>\";\n            btn.id \x3D idstr;\n            btn.addEventListener(\"click\"\x2C function (event) {\n                var controlObject \x3D XojoWeb.getNamedControl(el.id);\n                var jsonObj \x3D new XojoWeb.JSONItem();\n                jsonObj.set(\'ID\'\x2C el.id);\n                jsonObj.set(\'target\'\x2C event.target.tagName);\n                var c \x3D document.getElementById(cbid).checked;\n                jsonObj.set(\'value\'\x2C !c);\n                controlObject.triggerServerEvent(\'teccToggleClick\'\x2C jsonObj)\x2C true;\n            });\n            this.replaceEveryChild(btn);\n            this.applyTooltip(el);\n            this.applyUserStyle(el);\n        }\n        updateControl(data) {\n            super.updateControl(data);\n            let js \x3D $.parseJSON(data);\n            this.refresh();\n            this.off \x3D js.off;\n            this.coloron \x3D js.coloron;\n            this.crownposition \x3D js.crownposition;\n            this.activecrown \x3D js.activecrown;\n            this.deactivecrown \x3D js.deactivecrown;\n            this.coloroff \x3D js.coloroff;\n        }\n    }\n    tecc.teccToggle \x3D teccToggle;\n})(tecc || (tecc \x3D {}));\n", Scope = Private
 	#tag EndConstant
 
 	#tag Constant, Name = LibraryIcon, Type = String, Dynamic = False, Default = \"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", Scope = Public
@@ -558,20 +567,6 @@ Inherits WebSDKUIControl
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="CrownPosition"
-			Visible=true
-			Group="teccToggle"
-			InitialValue=""
-			Type="cpositions"
-			EditorType="Enum"
-			#tag EnumValues
-				"0 - Right"
-				"1 - Left"
-				"2 - Top"
-				"3 - Bottom"
-			#tag EndEnumValues
-		#tag EndViewProperty
-		#tag ViewProperty
 			Name="ActiveColor"
 			Visible=true
 			Group="teccToggle"
@@ -588,12 +583,34 @@ Inherits WebSDKUIControl
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="CrownColor"
+			Name="ActiveCrown"
 			Visible=true
 			Group="teccToggle"
 			InitialValue="&cffffff"
 			Type="color"
 			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="DeactiveCrown"
+			Visible=true
+			Group="teccToggle"
+			InitialValue="&cffffff"
+			Type="color"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="CrownPosition"
+			Visible=true
+			Group="teccToggle"
+			InitialValue=""
+			Type="cpositions"
+			EditorType="Enum"
+			#tag EnumValues
+				"0 - Right"
+				"1 - Left"
+				"2 - Top"
+				"3 - Bottom"
+			#tag EndEnumValues
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="_mPanelIndex"

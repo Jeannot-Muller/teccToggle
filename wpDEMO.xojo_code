@@ -127,10 +127,11 @@ Begin WebPage wpDEMO
    End
    Begin teccToggle teccToggle3
       ActiveColor     =   &cFF930000
+      ActiveCrown     =   &cFFFFFF00
       ControlID       =   ""
-      CrownColor      =   &cFF260000
       CrownPosition   =   2
       DeactiveColor   =   &c00000000
+      DeactiveCrown   =   &cFFFFFF00
       Enabled         =   True
       flag            =   0
       Height          =   68
@@ -156,11 +157,12 @@ Begin WebPage wpDEMO
       _mPanelIndex    =   -1
    End
    Begin teccToggle teccToggle1
-      ActiveColor     =   &cD4FB7800
+      ActiveColor     =   &c00000000
+      ActiveCrown     =   &c00F90000
       ControlID       =   ""
-      CrownColor      =   &cFEFFFF00
       CrownPosition   =   0
-      DeactiveColor   =   &c008F5100
+      DeactiveColor   =   &c00000000
+      DeactiveCrown   =   &cFF260000
       Enabled         =   True
       flag            =   0
       Height          =   68
@@ -187,10 +189,11 @@ Begin WebPage wpDEMO
    End
    Begin teccToggle teccToggle2
       ActiveColor     =   &c3D90F800
+      ActiveCrown     =   &cFFFFFF00
       ControlID       =   ""
-      CrownColor      =   &cD5D5D500
       CrownPosition   =   1
       DeactiveColor   =   &c01189200
+      DeactiveCrown   =   &cFFFFFF00
       Enabled         =   True
       flag            =   0
       Height          =   68
@@ -961,10 +964,11 @@ Begin WebPage wpDEMO
    End
    Begin teccToggle teccToggle4
       ActiveColor     =   &c3D90F800
+      ActiveCrown     =   &cFFFFFF00
       ControlID       =   ""
-      CrownColor      =   &cD5D5D500
       CrownPosition   =   3
       DeactiveColor   =   &c01189200
+      DeactiveCrown   =   &cFFFFFF00
       Enabled         =   False
       flag            =   0
       Height          =   68
@@ -1283,7 +1287,6 @@ Begin WebPage wpDEMO
       SelectedRowIndex=   0
       SelectedRowValue=   ""
       TabIndex        =   81
-      TabStop         =   True
       Tooltip         =   ""
       Top             =   429
       Visible         =   True
@@ -1295,7 +1298,7 @@ Begin WebPage wpDEMO
       Enabled         =   True
       Height          =   38
       Index           =   -2147483648
-      indicator       =   6
+      Indicator       =   6
       InitialValue    =   "Right\nLeft\nTop\nBottom"
       LastAddedRowIndex=   0
       LastRowIndex    =   0
@@ -1307,13 +1310,11 @@ Begin WebPage wpDEMO
       LockRight       =   False
       LockTop         =   True
       LockVertical    =   False
-      PanelIndex      =   0
       RowCount        =   0
       Scope           =   2
       SelectedRowIndex=   0
       SelectedRowValue=   ""
       TabIndex        =   82
-      TabStop         =   True
       Tooltip         =   ""
       Top             =   429
       Visible         =   True
@@ -1325,7 +1326,7 @@ Begin WebPage wpDEMO
       Enabled         =   True
       Height          =   38
       Index           =   -2147483648
-      indicator       =   6
+      Indicator       =   6
       InitialValue    =   "Right\nLeft\nTop\nBottom"
       LastAddedRowIndex=   0
       LastRowIndex    =   0
@@ -1337,13 +1338,11 @@ Begin WebPage wpDEMO
       LockRight       =   False
       LockTop         =   True
       LockVertical    =   False
-      PanelIndex      =   0
       RowCount        =   0
       Scope           =   2
       SelectedRowIndex=   0
       SelectedRowValue=   ""
       TabIndex        =   83
-      TabStop         =   True
       Tooltip         =   ""
       Top             =   429
       Visible         =   True
@@ -1355,7 +1354,7 @@ Begin WebPage wpDEMO
       Enabled         =   True
       Height          =   38
       Index           =   -2147483648
-      indicator       =   6
+      Indicator       =   6
       InitialValue    =   "Right\nLeft\nTop\nBottom"
       LastAddedRowIndex=   0
       LastRowIndex    =   0
@@ -1367,13 +1366,11 @@ Begin WebPage wpDEMO
       LockRight       =   False
       LockTop         =   True
       LockVertical    =   False
-      PanelIndex      =   0
       RowCount        =   0
       Scope           =   2
       SelectedRowIndex=   0
       SelectedRowValue=   ""
       TabIndex        =   84
-      TabStop         =   True
       Tooltip         =   ""
       Top             =   429
       Visible         =   True
