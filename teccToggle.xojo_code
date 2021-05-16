@@ -223,6 +223,7 @@ Inherits WebSDKUIControl
 		    css.Add("background-Color: var(--deactive-crown) !important;")
 		    css.Add("transition: background-Color;")
 		    css.Add("transform: translate(1.9Rem, 0);")
+		    css.Add("transition: all 0.3s;")
 		    css.Add("}")
 		    
 		    cssStr = String.FromArray( css, "" )

@@ -708,7 +708,7 @@ Begin WebPage wpDEMO
       Scope           =   0
       TabIndex        =   61
       TabPanelIndex   =   0
-      Text            =   "if you like my work, you might want to"
+      Text            =   "If you like my work, you might want to:"
       TextAlignment   =   0
       TextColor       =   &c00539200
       Tooltip         =   ""
@@ -1191,7 +1191,7 @@ Begin WebPage wpDEMO
       Scope           =   0
       TabIndex        =   78
       TabPanelIndex   =   0
-      Text            =   " Thank you!"
+      Text            =   "Thank you!"
       TextAlignment   =   0
       TextColor       =   &c00539200
       Tooltip         =   ""
@@ -1397,11 +1397,44 @@ Begin WebPage wpDEMO
       LockVertical    =   False
       Scope           =   2
       TabIndex        =   85
-      TabStop         =   True
       Tooltip         =   ""
       Top             =   688
       Visible         =   True
       Width           =   315
+      _mPanelIndex    =   -1
+   End
+   Begin WebLabel lblStatus8
+      Bold            =   True
+      ControlID       =   ""
+      Enabled         =   True
+      FontName        =   ""
+      FontSize        =   40.0
+      Height          =   46
+      Index           =   -2147483648
+      Indicator       =   0
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockHorizontal  =   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      LockVertical    =   False
+      Multiline       =   False
+      PanelIndex      =   0
+      Scope           =   0
+      TabIndex        =   86
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "DEMO"
+      TextAlignment   =   0
+      TextColor       =   &c00539200
+      Tooltip         =   ""
+      Top             =   59
+      Underline       =   False
+      Visible         =   True
+      Width           =   218
       _mPanelIndex    =   -1
    End
 End
