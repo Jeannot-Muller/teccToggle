@@ -5,7 +5,6 @@ Inherits WebSDKUIControl
 		Sub DrawControlInLayoutEditor(g as graphics)
 		  // Visual WebSDK controls can "draw" themselves in the IDE
 		  
-		  // todo4
 		  g.FontName = "Helvetica"
 		  g.FontUnit = FontUnits.Point
 		  g.FontSize = 21
