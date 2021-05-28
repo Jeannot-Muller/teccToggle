@@ -304,45 +304,120 @@ Inherits WebSDKUIControl
 	#tag EndHook
 
 
-	#tag Property, Flags = &h0, Description = 44657369676E
-		ActiveColor As color = &c3D90F8
-	#tag EndProperty
+	#tag ComputedProperty, Flags = &h0
+		#tag Getter
+			Get
+			  Return mActiveColor
+			End Get
+		#tag EndGetter
+		#tag Setter
+			Set
+			  mActiveColor = value
+			  updatecontrol
+			End Set
+		#tag EndSetter
+		ActiveColor As color
+	#tag EndComputedProperty
 
-	#tag Property, Flags = &h0
-		ActiveCrown As color = &cffffff
-	#tag EndProperty
+	#tag ComputedProperty, Flags = &h0
+		#tag Getter
+			Get
+			  Return mActiveCrown
+			End Get
+		#tag EndGetter
+		#tag Setter
+			Set
+			  mActiveCrown = value
+			  updatecontrol
+			End Set
+		#tag EndSetter
+		ActiveCrown As color
+	#tag EndComputedProperty
 
 	#tag Property, Flags = &h0, Description = 4D6972726F72
 		CrownPosition As cpositions
 	#tag EndProperty
 
-	#tag Property, Flags = &h0, Description = 44657369676E
-		DeactiveColor As color = &c929292
-	#tag EndProperty
-
-	#tag Property, Flags = &h0
-		DeactiveCrown As color = &cffffff
-	#tag EndProperty
+	#tag ComputedProperty, Flags = &h0
+		#tag Getter
+			Get
+			  Return mDeactiveColor
+			End Get
+		#tag EndGetter
+		#tag Setter
+			Set
+			  mDeactiveColor = value
+			  updatecontrol
+			End Set
+		#tag EndSetter
+		DeactiveColor As color
+	#tag EndComputedProperty
 
 	#tag ComputedProperty, Flags = &h0
+		#tag Getter
+			Get
+			  Return mDeactiveCrown
+			End Get
+		#tag EndGetter
+		#tag Setter
+			Set
+			  mDeactiveCrown = value
+			  updatecontrol
+			End Set
+		#tag EndSetter
+		DeactiveCrown As color
+	#tag EndComputedProperty
+
+	#tag ComputedProperty, Flags = &h21
 		#tag Getter
 			Get
 			  Return mflag
 			End Get
 		#tag EndGetter
-		flag As integer
+		Private flag As integer
 	#tag EndComputedProperty
 
-	#tag Property, Flags = &h0, Description = 496E697469616C6C79204F4646
-		InitiallyOff As boolean = false
-	#tag EndProperty
+	#tag ComputedProperty, Flags = &h0
+		#tag Getter
+			Get
+			  Return mInitiallyOff
+			End Get
+		#tag EndGetter
+		#tag Setter
+			Set
+			  mInitiallyOff = value
+			  updatecontrol
+			End Set
+		#tag EndSetter
+		InitiallyOff As boolean
+	#tag EndComputedProperty
 
 	#tag Property, Flags = &h21
 		Private Shared JSFramework As WebFile
 	#tag EndProperty
 
+	#tag Property, Flags = &h21, Description = 44657369676E
+		Private mActiveColor As color = &c3D90F8
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private mActiveCrown As color = &cffffff
+	#tag EndProperty
+
+	#tag Property, Flags = &h21, Description = 44657369676E
+		Private mDeactiveColor As color = &c929292
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private mDeactiveCrown As color = &cffffff
+	#tag EndProperty
+
 	#tag Property, Flags = &h21
 		Private mflag As integer
+	#tag EndProperty
+
+	#tag Property, Flags = &h21, Description = 496E697469616C6C79204F4646
+		Private mInitiallyOff As boolean = false
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
@@ -364,13 +439,13 @@ Inherits WebSDKUIControl
 		Private objectid As string
 	#tag EndProperty
 
-	#tag ComputedProperty, Flags = &h0
+	#tag ComputedProperty, Flags = &h21
 		#tag Getter
 			Get
 			  Return mstatus
 			End Get
 		#tag EndGetter
-		status As string
+		Private status As string
 	#tag EndComputedProperty
 
 	#tag Property, Flags = &h21
@@ -386,7 +461,7 @@ Inherits WebSDKUIControl
 		#tag Setter
 			Set
 			  mvalue = value
-			  
+			  updateControl
 			  Call refreshValues()
 			  Call teccToggleClick()
 			End Set
@@ -535,22 +610,6 @@ Inherits WebSDKUIControl
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="flag"
-			Visible=false
-			Group="Behavior"
-			InitialValue=""
-			Type="integer"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
-			Name="status"
-			Visible=false
-			Group="Behavior"
-			InitialValue=""
-			Type="string"
-			EditorType="MultiLineEditor"
-		#tag EndViewProperty
-		#tag ViewProperty
 			Name="TabIndex"
 			Visible=true
 			Group="Visual Controls"
@@ -567,18 +626,10 @@ Inherits WebSDKUIControl
 			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
-			Name="InitiallyOff"
-			Visible=true
-			Group="teccToggle"
-			InitialValue="false"
-			Type="boolean"
-			EditorType=""
-		#tag EndViewProperty
-		#tag ViewProperty
 			Name="ActiveColor"
 			Visible=true
 			Group="teccToggle"
-			InitialValue="&c3D90F8"
+			InitialValue="&c000000"
 			Type="color"
 			EditorType=""
 		#tag EndViewProperty
@@ -586,7 +637,7 @@ Inherits WebSDKUIControl
 			Name="DeactiveColor"
 			Visible=true
 			Group="teccToggle"
-			InitialValue="&c929292"
+			InitialValue="&c000000"
 			Type="color"
 			EditorType=""
 		#tag EndViewProperty
@@ -594,7 +645,7 @@ Inherits WebSDKUIControl
 			Name="ActiveCrown"
 			Visible=true
 			Group="teccToggle"
-			InitialValue="&cffffff"
+			InitialValue="&c000000"
 			Type="color"
 			EditorType=""
 		#tag EndViewProperty
@@ -602,7 +653,7 @@ Inherits WebSDKUIControl
 			Name="DeactiveCrown"
 			Visible=true
 			Group="teccToggle"
-			InitialValue="&cffffff"
+			InitialValue="&c000000"
 			Type="color"
 			EditorType=""
 		#tag EndViewProperty
@@ -619,6 +670,14 @@ Inherits WebSDKUIControl
 				"2 - Top"
 				"3 - Bottom"
 			#tag EndEnumValues
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="InitiallyOff"
+			Visible=true
+			Group="teccToggle"
+			InitialValue=""
+			Type="boolean"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="_mPanelIndex"

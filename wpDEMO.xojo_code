@@ -134,7 +134,6 @@ Begin WebPage wpDEMO
       DeactiveColor   =   &cA9A9A900
       DeactiveCrown   =   &cFF260000
       Enabled         =   True
-      flag            =   0
       Height          =   68
       Index           =   -2147483648
       Indicator       =   0
@@ -148,7 +147,6 @@ Begin WebPage wpDEMO
       LockTop         =   True
       LockVertical    =   False
       Scope           =   0
-      status          =   ""
       TabIndex        =   34
       Tooltip         =   "Tooltip Example"
       Top             =   94
@@ -165,7 +163,6 @@ Begin WebPage wpDEMO
       DeactiveColor   =   &c79797900
       DeactiveCrown   =   &cFF7D7800
       Enabled         =   True
-      flag            =   0
       Height          =   68
       Index           =   -2147483648
       Indicator       =   0
@@ -179,7 +176,6 @@ Begin WebPage wpDEMO
       LockTop         =   True
       LockVertical    =   False
       Scope           =   0
-      status          =   ""
       TabIndex        =   35
       Tooltip         =   "Tooltip Example"
       Top             =   94
@@ -196,7 +192,6 @@ Begin WebPage wpDEMO
       DeactiveColor   =   &c01189200
       DeactiveCrown   =   &cFFFFFF00
       Enabled         =   True
-      flag            =   0
       Height          =   68
       Index           =   -2147483648
       Indicator       =   0
@@ -210,7 +205,6 @@ Begin WebPage wpDEMO
       LockTop         =   True
       LockVertical    =   False
       Scope           =   0
-      status          =   ""
       TabIndex        =   36
       Tooltip         =   "Tooltip Example"
       Top             =   94
@@ -779,34 +773,6 @@ Begin WebPage wpDEMO
       Width           =   218
       _mPanelIndex    =   -1
    End
-   Begin WebImageViewer mvxLogo
-      ControlID       =   ""
-      Enabled         =   True
-      Height          =   117
-      HorizontalAlignment=   2
-      Index           =   -2147483648
-      Indicator       =   0
-      Left            =   727
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockHorizontal  =   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      LockVertical    =   False
-      Picture         =   1137932287
-      Scope           =   2
-      SVGData         =   ""
-      TabIndex        =   64
-      Tooltip         =   ""
-      Top             =   603
-      URL             =   ""
-      VerticalAlignment=   2
-      Visible         =   True
-      Width           =   300
-      _mPanelIndex    =   -1
-      _ProtectImage   =   False
-   End
    Begin WebButton pbSetTrue1
       AllowAutoDisable=   False
       Cancel          =   False
@@ -971,11 +937,10 @@ Begin WebPage wpDEMO
       DeactiveColor   =   &c01189200
       DeactiveCrown   =   &cC0C0C000
       Enabled         =   False
-      flag            =   0
       Height          =   68
       Index           =   -2147483648
       Indicator       =   0
-      InitiallyOff    =   False
+      InitiallyOff    =   True
       Left            =   907
       LockBottom      =   False
       LockedInPosition=   False
@@ -985,7 +950,6 @@ Begin WebPage wpDEMO
       LockTop         =   True
       LockVertical    =   False
       Scope           =   0
-      status          =   ""
       TabIndex        =   71
       Tooltip         =   "Tooltip Example"
       Top             =   94
@@ -1513,27 +1477,11 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events mvxLogo
-	#tag Event
-		Sub Pressed(x as Integer, y as Integer)
-		  #Pragma unused x
-		  #Pragma unused y
-		  
-		  Session.GoToURL("https://blog.xojodocs.com", False)
-		  
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub Opening()
-		  Me.Style.Cursor = WebStyle.Cursors.Pointer
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events pbSetTrue1
 	#tag Event
 		Sub Pressed()
 		  teccToggle1.value = True
-		  teccToggle1.UpdateControl
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1541,7 +1489,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle2.value = True
-		  teccToggle2.UpdateControl
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1549,7 +1497,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle3.value = True
-		  teccToggle3.UpdateControl
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1557,7 +1505,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle1.value = false
-		  teccToggle1.UpdateControl
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1565,7 +1513,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle2.value = False
-		  teccToggle2.UpdateControl
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1573,7 +1521,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle3.value = False
-		  teccToggle3.UpdateControl
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1589,7 +1537,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle4.Enabled = True
-		  teccToggle4.UpdateControl
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1597,7 +1545,7 @@ End
 	#tag Event
 		Sub Pressed()
 		  teccToggle4.Enabled = False
-		  teccToggle4.UpdateControl
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
